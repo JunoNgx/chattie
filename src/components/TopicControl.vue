@@ -19,7 +19,7 @@
         methods: {
             toggleExpand() {
                 this.isExpanded = !this.isExpanded
-                console.log(this.isExpanded)
+                // console.log(this.isExpanded)
             },
             updateTopicStatus(topicId: number) {
                 // const index = this.enabledTopics?.indexOf(topicId)
