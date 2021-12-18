@@ -2,12 +2,12 @@
     <PromptDisplay @get-new-prompt="getNewPrompt" :prompt=promptStr />
 </template>
 
-<script>
+<script lang="ts">
     import PromptDisplay from "./components/PromptDisplay.vue"
     import topicData from "./data/topics.json"
 
-    let promptStr = "Let's get you something to talk about\nPress the button below";
-    let enabledTopics = [];
+    let promptStr = "Let's get you something to talk about";
+    let enabledTopics: number[] = [];
 
     export default {
         data() {
@@ -21,10 +21,11 @@
             PromptDisplay
         },
         created: function() {
+
             topicData.forEach(topic => {
                 if (topic.isEnabledByDefault) enabledTopics.push(topic.id)
             })
-            console.log(enabledTopics)
+            // console.log(enabledTopics)
         },
         methods: {
             getNewPrompt() {
@@ -43,7 +44,6 @@
 <style lang="sass">
 
 @use "./styles/mixins" as m
-
 @import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,700;1,300&display=swap')
 
 #app
