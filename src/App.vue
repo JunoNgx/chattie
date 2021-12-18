@@ -25,12 +25,11 @@
                 hasNoTopicEnabled: false as boolean
             }
         },
-        create: function() {
-
+        mounted: function() {
             topicData.forEach(topic => {
                 if (topic.isEnabledByDefault) {this.enabledTopics.push(topic.id)}
             })
-            // console.log(enabledTopics)
+            // console.log(this.enabledTopics)
         },
         methods: {
             getNewPrompt() {
