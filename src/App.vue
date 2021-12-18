@@ -1,5 +1,5 @@
 <template>
-    <PromptDisplay :prompt=topicList[0].prompts[0] />
+    <PromptDisplay @get-new-prompt="getNewPrompt" :prompt=promptStr />
 </template>
 
 <script>
@@ -7,16 +7,26 @@
     import topicList from "./data/topics.json"
 
     const randoString = "Blah blah blah";
+    const promptStr = "";
 
     export default {
         data() {
             return {
                 topicList: topicList,
-                randoString: randoString
+                randoString: randoString,
+                promptStr: promptStr
             }
         },
         components: {
             PromptDisplay
+        },
+        methods: {
+            getNewPrompt() {
+                // console.log("get new task from parent")
+                const topicIndex = Math.floor(Math.random() * topicList.length);
+                const promptIndex = Math.floor(Math.random() * topicList[topicIndex].prompts.length);
+                this.promptStr = topicList[topicIndex].prompts[promptIndex];
+            }
         }
     }
 
