@@ -1,17 +1,14 @@
 <template>
     <div>
         <p>{{prompt}}</p>
-        <button @click="getNewPrompt"> Get new topic</button>
+        <button @click="getNewPrompt">Get new topic</button>
     </div>
 </template>
 
 <script>
     export default {
         props: {
-            prompt: {
-                type: String,
-                default: "Let's get you something to talk about\nPress the button below"
-            }
+            prompt: String,
         },
         methods: {
             getNewPrompt() {
