@@ -5,42 +5,53 @@
     import topicData from "./data/topics.json"
     import TopicControl from "./components/TopicControl.vue"
     import PromptDisplay from "./components/PromptDisplay.vue"
+    import NoTopicError from "./components/NoTopicError.vue"
 
-    let promptStr = "Let's get you something to talk about";
-    let enabledTopics: number[] = [];
+    // let promptStr = "Let's get you something to talk about";
+    // let enabledTopics: number[] = [];
 
     export default defineComponent ({
         name: "App",
         components: {
             TopicControl,
-            PromptDisplay
+            PromptDisplay,
+            NoTopicError
         },
         data() {
             return {
                 topicData: topicData as Topic[],
-                promptStr: promptStr as string,
-                enabledTopics: enabledTopics as number[]
+                promptStr: "Let's get you something to talk about" as string,
+                enabledTopics: [] as number[],
+                hasNoTopicEnabled: false as boolean
             }
         },
-        beforeCreate: function() {
+        create: function() {
 
             topicData.forEach(topic => {
-                if (topic.isEnabledByDefault) {enabledTopics.push(topic.id)}
+                if (topic.isEnabledByDefault) {this.enabledTopics.push(topic.id)}
             })
             // console.log(enabledTopics)
         },
         methods: {
             getNewPrompt() {
+                if (this.enabledTopics.length === 0) {
+                    // alert("No topic enabled. Please choose some topics first.")
+                    this.hasNoTopicEnabled = true
+                    return
+                } else {
+                    this.hasNoTopicEnabled = false
+                }
+
                 // console.log("get new task from parent")
-                let topicIndex = Math.floor(Math.random() * topicData.length);
-                while (!enabledTopics.includes(topicIndex)) {
-                    topicIndex = Math.floor(Math.random() * topicData.length);
+                let topicIndex = Math.floor(Math.random() * topicData.length)
+                while (!this.enabledTopics.includes(topicIndex)) {
+                    topicIndex = Math.floor(Math.random() * topicData.length)
                 }
-                let promptIndex = Math.floor(Math.random() * topicData[topicIndex].prompts.length);
+                let promptIndex = Math.floor(Math.random() * topicData[topicIndex].prompts.length)
                 while (this.promptStr === topicData[topicIndex].prompts[promptIndex]) {
-                    promptIndex = Math.floor(Math.random() * topicData[topicIndex].prompts.length);
+                    promptIndex = Math.floor(Math.random() * topicData[topicIndex].prompts.length)
                 }
-                this.promptStr = topicData[topicIndex].prompts[promptIndex];
+                this.promptStr = topicData[topicIndex].prompts[promptIndex]
             },
             updateTopicStatus(topicId: number) {
                 const index = this.enabledTopics.indexOf(topicId)
@@ -64,6 +75,9 @@
     <PromptDisplay
         :prompt=promptStr
         @get-new-prompt="getNewPrompt"
+    />
+    <NoTopicError
+        v-if=hasNoTopicEnabled
     />
 </template>
 
