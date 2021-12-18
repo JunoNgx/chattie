@@ -3,6 +3,7 @@
     import type Topic from "./models/Topic"
 
     import topicData from "./data/topics.json"
+    import TopicControl from "./components/TopicControl.vue"
     import PromptDisplay from "./components/PromptDisplay.vue"
 
     let promptStr = "Let's get you something to talk about";
@@ -11,6 +12,7 @@
     export default defineComponent ({
         name: "App",
         components: {
+            TopicControl,
             PromptDisplay
         },
         data() {
@@ -20,10 +22,10 @@
                 enabledTopics: enabledTopics as number[]
             }
         },
-        created: function() {
+        beforeCreate: function() {
 
             topicData.forEach(topic => {
-                if (topic.isEnabledByDefault) enabledTopics.push(topic.id)
+                if (topic.isEnabledByDefault) {enabledTopics.push(topic.id)}
             })
             // console.log(enabledTopics)
         },
@@ -39,13 +41,30 @@
                     promptIndex = Math.floor(Math.random() * topicData[topicIndex].prompts.length);
                 }
                 this.promptStr = topicData[topicIndex].prompts[promptIndex];
+            },
+            updateTopicStatus(topicId: number) {
+                const index = this.enabledTopics.indexOf(topicId)
+                if (index === -1) { // If not currently in the enabled list
+                    this.enabledTopics.push(topicId)
+                } else {
+                    this.enabledTopics.splice(index, 1)
+                }
+                console.log(this.enabledTopics)
             }
         }
     })
 </script>
 
 <template>
-    <PromptDisplay @get-new-prompt="getNewPrompt" :prompt=promptStr />
+    <TopicControl
+        :topicData=topicData
+        :enabledTopics=enabledTopics
+        @update-topic-status="updateTopicStatus"
+    />
+    <PromptDisplay
+        :prompt=promptStr
+        @get-new-prompt="getNewPrompt"
+    />
 </template>
 
 <style lang="sass">
@@ -60,9 +79,8 @@
     border: 1px solid #111
     margin: auto
     max-width: 1280px
-    text-align: center
-    background-color: #777
-    @include m.mobile
-        background-color: #255
+    background-color: #255
+    // @include m.mobile
+    //     background-color: #255
 
 </style>
