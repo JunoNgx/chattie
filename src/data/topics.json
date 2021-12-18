@@ -1,0 +1,57 @@
+[
+    {
+        "id": 0,
+        "name": "personal",
+        "prompts": [
+            "Favourite colours",
+            "What time do you sleep?",
+            "What do you often forget?"
+        ]
+    },
+    {
+        "id": 1,
+        "name": "vulnerabilities",
+        "prompts": [
+            "What is your biggest fear?",
+            "What are you insecure about?",
+            "What did your parents do wrong?",
+            "Are you lonely?",
+            "What are you most disappointed about?",
+            "Are you settling for less?",
+            "Who do you envy?",
+            "What is a reason one might consider you an evil person?",
+            "What have you given up on?",
+            "What are your least favourite questions?",
+            "What are your negative self-talks?"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "romance",
+        "prompts": [
+            "Pet peeves in dates",
+            "Paying bills on the first date",
+            "Cheating",
+            "Open relationships"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "controversies",
+        "prompts": [
+            "Abortion",
+            "Enthanasia",
+            "Liberism",
+            "Conservatism",
+            "LBGTQ+",
+            "Debts",
+            "Same-sex marriages",
+            "Marriage is outdated",
+            "Capital punishment",
+            "Single-sex schools",
+            "Legality of suicide",
+            "Piracy",
+            "Recreational drug use"
+        ]
+    }
+]
