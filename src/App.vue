@@ -1,7 +1,3 @@
-<template>
-    <PromptDisplay @get-new-prompt="getNewPrompt" :prompt=promptStr />
-</template>
-
 <script lang="ts">
     import { defineComponent } from 'vue';
     import type Topic from "./models/Topic"
@@ -47,6 +43,10 @@
         }
     })
 </script>
+
+<template>
+    <PromptDisplay @get-new-prompt="getNewPrompt" :prompt=promptStr />
+</template>
 
 <style lang="sass">
 
