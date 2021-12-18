@@ -68,12 +68,20 @@
 
 <style lang="sass">
 
+@use "../styles/mixins" as m
+
 .topic-settings
     border: 1px solid blue
     // width: min-content
     margin: auto
     overflow: hidden
-    height: 2rem
+    max-height: 2rem
+    // +m.transition(max-height)
+    transition: max-height 250ms
+    
+    &--is-expanded
+        // Will need to manually calculate this each time new topics are added
+        max-height: 100px
 
     &__expand-button
         border: 1px solid yellow
@@ -101,10 +109,11 @@
             transform: rotate(45deg)
             transform-origin: 100% 100%
             margin-left: 1rem
+            +m.transition(transform-origin, transform)
 
             &--is-expanded
-                transform: rotate(225deg)
                 transform-origin: 65% 65%
+                transform: rotate(225deg)
 
     &__topic-wrapper
         display: flex
@@ -119,8 +128,5 @@
             cursor: pointer
             &--is-enabled
                 background-color: cyan
-
-    &--is-expanded
-        height: max-content
 
 </style>
