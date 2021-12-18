@@ -26,9 +26,12 @@
             }
         },
         mounted: function() {
-            topicData.forEach(topic => {
-                if (topic.isEnabledByDefault) {this.enabledTopics.push(topic.id)}
-            })
+
+            if (localStorage.getItem('enabledTopics')) {
+                this.enabledTopics = JSON.parse(localStorage.getItem('enabledTopics')!)
+            } else {
+                this.resetTopicsToDefault()
+            }
             // console.log(this.enabledTopics)
         },
         methods: {
@@ -59,7 +62,15 @@
                 } else {
                     this.enabledTopics.splice(index, 1)
                 }
+
+                localStorage.setItem('enabledTopics', JSON.stringify(this.enabledTopics))
                 // console.log(this.enabledTopics)
+            },
+            resetTopicsToDefault() {
+                this.enabledTopics = []
+                topicData.forEach(topic => {
+                    if (topic.isEnabledByDefault) {this.enabledTopics.push(topic.id)}
+                })
             }
         }
     })
