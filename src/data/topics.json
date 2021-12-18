@@ -2,6 +2,7 @@
     {
         "id": 0,
         "name": "personal",
+        "isEnabledByDefault": true,
         "prompts": [
             "Favourite colours",
             "What time do you sleep?",
@@ -11,6 +12,7 @@
     {
         "id": 1,
         "name": "vulnerabilities",
+        "isEnabledByDefault": false,
         "prompts": [
             "What is your biggest fear?",
             "What are you insecure about?",
@@ -28,6 +30,7 @@
     {
         "id": 2,
         "name": "romance",
+        "isEnabledByDefault": true,
         "prompts": [
             "Pet peeves in dates",
             "Paying bills on the first date",
@@ -38,6 +41,7 @@
     {
         "id": 3,
         "name": "controversies",
+        "isEnabledByDefault": false,
         "prompts": [
             "Abortion",
             "Enthanasia",

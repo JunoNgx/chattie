@@ -4,28 +4,37 @@
 
 <script>
     import PromptDisplay from "./components/PromptDisplay.vue"
-    import topicList from "./data/topics.json"
+    import topicData from "./data/topics.json"
 
-    const randoString = "Blah blah blah";
-    const promptStr = "Let's get you something to talk about\nPress the button below";
+    let promptStr = "Let's get you something to talk about\nPress the button below";
+    let enabledTopics = [];
 
     export default {
         data() {
             return {
-                topicList: topicList,
-                randoString: randoString,
-                promptStr: promptStr
+                topicData: topicData,
+                promptStr: promptStr,
+                enabledTopics: enabledTopics
             }
         },
         components: {
             PromptDisplay
         },
+        created: function() {
+            topicData.forEach(topic => {
+                if (topic.isEnabledByDefault) enabledTopics.push(topic.id)
+            })
+            console.log(enabledTopics)
+        },
         methods: {
             getNewPrompt() {
                 // console.log("get new task from parent")
-                const topicIndex = Math.floor(Math.random() * topicList.length);
-                const promptIndex = Math.floor(Math.random() * topicList[topicIndex].prompts.length);
-                this.promptStr = topicList[topicIndex].prompts[promptIndex];
+                let topicIndex = Math.floor(Math.random() * topicData.length);
+                while (!enabledTopics.includes(topicIndex)) {
+                    topicIndex = Math.floor(Math.random() * topicData.length);
+                }
+                const promptIndex = Math.floor(Math.random() * topicData[topicIndex].prompts.length);
+                this.promptStr = topicData[topicIndex].prompts[promptIndex];
             }
         }
     }
@@ -33,8 +42,7 @@
 
 <style lang="sass">
 
-@use "./styles/mixins"
-@use "./styles/vars"
+@use "./styles/mixins" as m
 
 @import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,700;1,300&display=swap')
 
@@ -47,7 +55,7 @@
     max-width: 1280px
     text-align: center
     background-color: #777
-    @include mixins.mobile
+    @include m.mobile
         background-color: #255
 
 </style>
