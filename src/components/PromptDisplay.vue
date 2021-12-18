@@ -6,17 +6,19 @@
 </template>
 
 <script lang="ts">
-    export default {
+    import { defineComponent } from 'vue';
+
+    export default defineComponent({
         props: {
             prompt: String,
         },
         methods: {
             getNewPrompt() {
-                this.$emit('get-new-prompt');
+                this.$emit("get-new-prompt");
                 // console.log("get New prompt")
             }
         }
-    }
+    })
 </script>
 
 <style scoped>

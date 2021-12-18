@@ -3,22 +3,26 @@
 </template>
 
 <script lang="ts">
-    import PromptDisplay from "./components/PromptDisplay.vue"
+    import { defineComponent } from 'vue';
+    import type Topic from "./models/Topic"
+
     import topicData from "./data/topics.json"
+    import PromptDisplay from "./components/PromptDisplay.vue"
 
     let promptStr = "Let's get you something to talk about";
     let enabledTopics: number[] = [];
 
-    export default {
-        data() {
-            return {
-                topicData: topicData,
-                promptStr: promptStr,
-                enabledTopics: enabledTopics
-            }
-        },
+    export default defineComponent ({
+        name: "App",
         components: {
             PromptDisplay
+        },
+        data() {
+            return {
+                topicData: topicData as Topic[],
+                promptStr: promptStr as string,
+                enabledTopics: enabledTopics as number[]
+            }
         },
         created: function() {
 
@@ -41,7 +45,7 @@
                 this.promptStr = topicData[topicIndex].prompts[promptIndex];
             }
         }
-    }
+    })
 </script>
 
 <style lang="sass">
