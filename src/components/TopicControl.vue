@@ -3,15 +3,24 @@
 
     export default defineComponent({
         name: "topic-control",
+        data() {
+            return {
+                isExpanded: false as boolean
+            }
+        },
         props: {
             topicData: Array,
             enabledTopics: Array
         },
         created() {
-            console.log(this.topicData);
-            console.log(this.enabledTopics);
+            // console.log(this.topicData);
+            // console.log(this.enabledTopics);
         },
         methods: {
+            toggleExpand() {
+                this.isExpanded = !this.isExpanded
+                console.log(this.isExpanded)
+            },
             updateTopicStatus(topicId: number) {
                 // const index = this.enabledTopics?.indexOf(topicId)
                 // if (index !== undefined && index === -1) {
@@ -26,11 +35,21 @@
 </script>
 
 <template>
-    <div class="topic-settings">
-        <div class="topic-settings__expand-button">
+    <div
+        class="topic-settings"
+        :class="{'topic-settings--is-expanded':isExpanded}"
+    >
+
+        <!-- The expand button -->
+        <div class="topic-settings__expand-button" @click="toggleExpand">
             <span class="topic-settings__expand-button__text">Topic settings</span>
-            <div class="topic-settings__expand-button__icon"></div>
+            <div 
+                class="topic-settings__expand-button__icon"
+                :class="{'topic-settings__expand-button__icon--is-expanded':isExpanded}"
+            ></div>
         </div>
+
+        <!-- List of available topics -->
         <div class="topic-settings__topic-wrapper">
             <p
                 class="topic-settings__topic-wrapper__item"
@@ -53,6 +72,8 @@
     border: 1px solid blue
     // width: min-content
     margin: auto
+    overflow: hidden
+    height: 2rem
 
     &__expand-button
         border: 1px solid yellow
@@ -62,6 +83,7 @@
         // display: flex
         // align-items: center
         text-align: center
+        height: 2rem
 
         &__text
             font-size: 1.5rem
@@ -78,6 +100,11 @@
             border-bottom: 5px solid cyan
             transform: rotate(45deg)
             transform-origin: 100% 100%
+            margin-left: 1rem
+
+            &--is-expanded
+                transform: rotate(225deg)
+                transform-origin: 65% 65%
 
     &__topic-wrapper
         display: flex
@@ -92,5 +119,8 @@
             cursor: pointer
             &--is-enabled
                 background-color: cyan
+
+    &--is-expanded
+        height: max-content
 
 </style>
