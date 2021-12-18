@@ -29,33 +29,25 @@
             }
         }
     }
-
-    // import Hallo from "./components/Hallo.vue"
-
-    // export default {
-    //     components: {
-    //         Hallo
-    //     }
-    // }
-
-    // import HelloWorld from './components/HelloWorld.vue'
-
-    // export default {
-    //     name: 'App',
-    //     components: {
-    //         HelloWorld
-    //     }
-    // }
 </script>
 
 <style lang="sass">
 
+@use "./styles/mixins"
+@use "./styles/vars"
+
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,700;1,300&display=swap')
+
 #app
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
-    
+    font-family: 'Zilla Slab', serif
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    border: 1px solid #111
+    margin: auto
+    max-width: 1280px
+    text-align: center
+    background-color: #777
+    @include mixins.mobile
+        background-color: #255
+
 </style>

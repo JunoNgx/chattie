@@ -1,0 +1,5 @@
+@use "./vars"
+
+@mixin mobile
+    @media screen and (max-width: vars.$break-point)
+        @content
