@@ -34,7 +34,10 @@
                 while (!enabledTopics.includes(topicIndex)) {
                     topicIndex = Math.floor(Math.random() * topicData.length);
                 }
-                const promptIndex = Math.floor(Math.random() * topicData[topicIndex].prompts.length);
+                let promptIndex = Math.floor(Math.random() * topicData[topicIndex].prompts.length);
+                while (this.promptStr === topicData[topicIndex].prompts[promptIndex]) {
+                    promptIndex = Math.floor(Math.random() * topicData[topicIndex].prompts.length);
+                }
                 this.promptStr = topicData[topicIndex].prompts[promptIndex];
             }
         }
