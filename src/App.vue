@@ -49,7 +49,7 @@
                 } else {
                     this.enabledTopics.splice(index, 1)
                 }
-                console.log(this.enabledTopics)
+                // console.log(this.enabledTopics)
             }
         }
     })
