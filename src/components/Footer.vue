@@ -6,7 +6,16 @@
 
 <style lang="sass">
 
+@use "../styles/mixins" as m
+@use "../styles/vars" as v
+
 .footer
+    font-size: 1.2rem
     text-align: center
+
+    a
+        color: v.$acc-green
+        &:visited
+            color: v.$acc-green
 
 </style>
