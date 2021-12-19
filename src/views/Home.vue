@@ -136,33 +136,42 @@
 </script>
 
 <template>
-    <!-- <transition name="fade" mode="out-in">
-        <div> -->
-            <!-- <Header
-                :showAboutDialog=showAboutDialog
-                :showSettingsDialog=showSettingsDialog
-            /> -->
-            <TopicControl/>
-            <PromptDisplay
-                :prompt=promptStr
-                @get-new-prompt="getNewPrompt"
-            />
-            <NoTopicError
-                v-if=hasNoTopicEnabled
-            />
-            <!-- <Footer /> -->
+    <div class="home">
+        <!-- <transition name="fade" mode="out-in">
+            <div> -->
+                <!-- <Header
+                    :showAboutDialog=showAboutDialog
+                    :showSettingsDialog=showSettingsDialog
+                /> -->
+                <TopicControl/>
+                <PromptDisplay
+                    :prompt=promptStr
+                    @get-new-prompt="getNewPrompt"
+                />
+                <NoTopicError
+                    v-if=hasNoTopicEnabled
+                />
+                <!-- <Footer /> -->
 
-            <!-- <SettingsDialog
-                v-show=isShowingSettingsDialog
-                :darkModeValue=isDarkMode
-                :updateDarkMode=updateDarkMode
-                :resetDefault=resetTopicsToDefault
-                :close=closeSettingsDialog
-            />
-            <AboutDialog
-                v-show=isShowingAboutDialog
-                :close=closeAboutDialog
-            /> -->
-        <!-- </div>
-    </transition> -->
+                <!-- <SettingsDialog
+                    v-show=isShowingSettingsDialog
+                    :darkModeValue=isDarkMode
+                    :updateDarkMode=updateDarkMode
+                    :resetDefault=resetTopicsToDefault
+                    :close=closeSettingsDialog
+                />
+                <AboutDialog
+                    v-show=isShowingAboutDialog
+                    :close=closeAboutDialog
+                /> -->
+            <!-- </div>
+        </transition> -->
+    </div>
 </template>
+
+<style lang="sass">
+
+.home
+    width: 100%
+    
+</style>

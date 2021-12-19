@@ -33,7 +33,14 @@
 
 <template>
     <Header/>
-    <router-view/>
+        <!-- <transition :name="fade" mode="out-in">
+            <router-view/>
+        </transition> -->
+        <router-view v-slot="{ Component }">
+            <transition mode="out-in" appear>
+                <component :is="Component" />
+            </transition>
+        </router-view>
     <Footer/>
 </template>
 
@@ -42,5 +49,16 @@
 @use "./styles/mixins" as m
 @use "./styles/universal"
 @import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,700;1,300&display=swap')
+
+.v-enter-from
+    transform: translateX(-100%)
+    opacity: 0
+
+.v-enter-active, .v-leave-active
+    +m.transition(transform, opacity)
+
+.v-leave-to
+    transform: translateX(100%)
+    opacity: 0
 
 </style>

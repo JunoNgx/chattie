@@ -87,7 +87,7 @@
     margin: 2rem auto
     padding: 0.5rem
     overflow: hidden
-    // width: 60%
+    max-width: 60%
     max-height: 2rem
     +m.transition(max-height)
     
