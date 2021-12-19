@@ -10,6 +10,7 @@
 @use "../styles/vars" as v
 
 .footer
+    border-top: 1px solid v.$text-light
     font-size: 1.2rem
     text-align: center
 
