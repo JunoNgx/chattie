@@ -62,7 +62,7 @@
         margin: 0.25rem
 
         &__item
-            // margin: 0.5rem
+            margin: 0.5rem
             text-decoration: none
             font-size: 1.25rem
             cursor: pointer
