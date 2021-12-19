@@ -77,4 +77,9 @@
     +m.mobile
         display: block
 
+a.header__navbar__item
+    color: v.$text-light
+    &:visited
+        color: v.$text-light
+
 </style>
