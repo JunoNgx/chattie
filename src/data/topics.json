@@ -6,11 +6,168 @@
         "prompts": [
             "Favourite colours",
             "What time do you sleep?",
-            "What do you often forget?"
+            "What do you often forget?",
+            "Your guilty pleasure",
+            "Something you are OCD about",
+            "An useless talent you have",
+            "Your last lie",
+            "Your favourite belonging",
+            "Something you'd save if your house is on fire",
+            "Favourite food",
+            "Favourite restaurant",
+            "Somewhere you'd like to travel to",
+            "Peer pressure"
         ]
     },
     {
         "id": 1,
+        "name": "romance",
+        "isEnabledByDefault": true,
+        "prompts": [
+            "Pet peeves in dates",
+            "Paying bills on the first date",
+            "Cheating",
+            "Open relationships",
+            "Rejection",
+            "Sexting",
+            "Using toys in bed",
+            "Random thing that turns you on",
+            "Your last date",
+            "Something you'd like to try with a romantic partner",
+            "Something you'd like to try in bad",
+            "French kiss",
+            "Sizes (as in, in bed)",
+            "Relationship status",
+            "Breakup sex",
+            "Wet dreams",
+            "Not reciprocating oral sex",
+            "Threesome",
+            "Foreplay"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "astrology",
+        "isEnabledByDefault": true,
+        "prompts": [
+            "Your sign",
+            "Your rising sign",
+            "Dating based on signs",
+            "Choosing careers based on signs",
+            "Choosing friends based on signs",
+            "Incompatible signs",
+            "Something about your sign that isn't true about you"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "films",
+        "isEnabledByDefault": true,
+        "prompts": [
+            "Quentin Tarantino",
+            "Christopher Nolan",
+            "Martin Scorsese",
+            "David Fincher",
+            "Tommy Wiseau",
+            "Brad Pitt",
+            "Tom Cruise",
+            "Superheroes movies",
+            "Cinematography",
+            "Favourite soundtrack",
+            "A remake of a film you'd like to happen",
+            "A sequel of a film you'd like to see",
+            "Your unpopular opinions about films",
+            "The academy awards",
+            "Technical inaccuracy in films",
+            "Squid Game",
+            "Korean cinema",
+            "A film that made you cry",
+            "Nicholas Cage",
+            "Ryan Gosling"
+        ]
+    },
+    {
+        "id": 4,
+        "name": "photography",
+        "isEnabledByDefault": true,
+        "prompts": [
+            "Smartphone photography",
+            "Mirrorless camera",
+            "Medium format",
+            "Film photography",
+            "Street photography",
+            "An uncommon photography genre you know",
+            "Leica"
+        ]
+    },
+    {
+        "id": 5,
+        "name": "videogames",
+        "isEnabledByDefault": true,
+        "prompts": [
+            "Microtransactions",
+            "Call of Duty",
+            "E-sport",
+            "Smartphone games",
+            "Politics in games",
+            "Open world",
+            "False agency in games",
+            "Mass Effect",
+            "Indie games",
+            "AA games",
+            "Cyberpunk 2077",
+            "A game that is important to you",
+            "Virtual reality"
+        ]
+    },{
+        "id": 6,
+        "name": "parenting",
+        "isEnabledByDefault": true,
+        "prompts": [
+            "Kids crying in the middle of the night",
+            "Changing diaper",
+            "Kids getting sick",
+            "License to procreate",
+            "Single parent",
+            "Children as investment",
+            "Helicopter parent",
+            "Kids losing virginity",
+            "Kids failing exam",
+            "Unexpected parent responsibility",
+            "Parent burnout",
+            "Motherhood as womanhood",
+            "Giving kids sex ed"
+        ]
+    },
+    {
+        "id": 7,
+        "name": "music",
+        "isEnabledByDefault": true,
+        "prompts": [
+            "K-Pop",
+            "Heavy metal",
+            "Rammstein",
+            "Hip hop",
+            "Lo-fi hip hop",
+            "Soundtrack",
+            "Beethoven",
+            "An musician who has not released any new album for a while",
+            "Ways of exploring music",
+            "Your favourite music video",
+            "Justin Bieber",
+            "Britney Spears",
+            "90s boybands",
+            "Ripping CD",
+            "Vinyls",
+            "Lossless audio",
+            "Headphones or speakers?",
+            "Mp3",
+            "Music radio",
+            "Music based on mood"
+        ]
+    },
+    {
+        "id": 99,
         "name": "vulnerabilities",
         "isEnabledByDefault": false,
         "prompts": [
@@ -24,22 +181,12 @@
             "What is a reason one might consider you an evil person?",
             "What have you given up on?",
             "What are your least favourite questions?",
-            "What are your negative self-talks?"
+            "What are your negative self-talks?",
+            "What is the most shameful thing you have done?"
         ]
     },
     {
-        "id": 2,
-        "name": "romance",
-        "isEnabledByDefault": true,
-        "prompts": [
-            "Pet peeves in dates",
-            "Paying bills on the first date",
-            "Cheating",
-            "Open relationships"
-        ]
-    },
-    {
-        "id": 3,
+        "id": 100,
         "name": "controversies",
         "isEnabledByDefault": false,
         "prompts": [
@@ -47,7 +194,7 @@
             "Enthanasia",
             "Liberism",
             "Conservatism",
-            "LBGTQ+",
+            "Transgenders",
             "Debts",
             "Same-sex marriages",
             "Marriage is outdated",
@@ -55,7 +202,8 @@
             "Single-sex schools",
             "Legality of suicide",
             "Piracy",
-            "Recreational drug use"
+            "Recreational drug use",
+            "Queer romances"
         ]
     }
 ]
