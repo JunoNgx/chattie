@@ -82,15 +82,15 @@
         // position: relative
 
         &__button
-            border: 1px solid v.$text-light
-            background-color: v.$bg-light
-            cursor: pointer
-            width: fit-content
-            font-family: v.$font-stack
-            font-size: 1.25rem
-            margin: 1rem
-            padding: 0.75rem
-            color: v.$text-light
+            // border: 1px solid v.$text-light
+            // background-color: v.$bg-light
+            // cursor: pointer
+            // width: fit-content
+            // font-family: v.$font-stack
+            // font-size: 1.25rem
+            // margin: 1rem
+            // padding: 0.75rem
+            // color: v.$text-light
             float: right
             +m.transition(color, background-color, width, height)
 

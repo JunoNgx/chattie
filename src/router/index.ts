@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
+import Intro from '../views/Intro.vue'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import Settings from '../views/Settings.vue'
@@ -6,10 +7,13 @@ import Settings from '../views/Settings.vue'
 const routes: Array<RouteRecordRaw> = [
     {
         path: '/',
+        name: 'Intro',
+        component: Intro
+    }, {
+        path: '/home',
         name: 'Home',
         component: Home
-    },
-    {
+    }, {
         path: '/about',
         name: 'About',
         // // route level code-splitting

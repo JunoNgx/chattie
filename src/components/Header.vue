@@ -16,7 +16,7 @@
             Chattie
         </p>
         <div class="header__navbar">
-            <router-link class="header__navbar__item" to="/">Home</router-link>
+            <router-link class="header__navbar__item" to="/home">Home</router-link>
             <router-link class="header__navbar__item" to="/settings">Settings</router-link>
             <router-link class="header__navbar__item" to="/about">About</router-link>
         </div>
