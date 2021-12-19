@@ -121,7 +121,7 @@
     />
     <Footer />
 
-    <AboutDialog v-if=isShowingAboutDialog :close=closeAboutDialog />
+    <AboutDialog v-show=isShowingAboutDialog :close=closeAboutDialog />
 </template>
 
 <style lang="sass">

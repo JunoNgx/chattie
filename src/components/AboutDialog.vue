@@ -14,7 +14,7 @@
 </script>
 
 <template>
-    <ModalBase :title="About" :close="close">
+    <ModalBase :title="'About'" :close="close">
         <div class="about-content">
             <p>
                 Chattie is a web application made by Juno Nguyen.
