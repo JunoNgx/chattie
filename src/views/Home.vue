@@ -53,7 +53,7 @@
                 const topicData: Topic[] = this.$store.state.topicData
                 const enabledTopics: number[] = this.$store.state.enabledTopics
 
-                console.log(enabledTopics)
+                // console.log(enabledTopics)
 
                 if (enabledTopics.length === 0) {
                     this.hasNoTopicEnabled = true
@@ -173,5 +173,5 @@
 
 .home
     width: 100%
-    
+
 </style>

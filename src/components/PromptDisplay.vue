@@ -3,22 +3,45 @@
 
     export default defineComponent({
         name: "prompt-display",
+        data() {
+            return {
+                isShowing: true as boolean
+            }
+        },
         props: {
             prompt: String,
         },
         methods: {
             getNewPrompt() {
-                this.$emit("get-new-prompt");
+                this.isShowing = false
+                setTimeout(() => {
+                    this.isShowing = true
+                    this.$emit("get-new-prompt");
+                }, 600)
+                // this.$emit("get-new-prompt");
                 // console.log("get New prompt")
             }
-        }
+        },
+        // watch: {
+        //     isShowing: function() {
+        //         // this.isShowing = true
+        //         // this.$emit("get-new-prompt");
+        //     }
+        // }
     })
 </script>
 
 <template>
     <div class="prompt-display">
         <div class="prompt-display__text-wrapper">
-            <p class="prompt-display__text-wrapper__text">{{prompt}}</p>
+            <transition name="prompt-fade">
+                <p
+                    class="prompt-display__text-wrapper__text"
+                    v-show=this.isShowing
+                >
+                    {{prompt}}
+                </p>
+            </transition>
         </div>
         <button
             class="prompt-display__button"
@@ -80,5 +103,14 @@
     +m.mobile
         width: 90%
 
+.prompt-fade-enter-from
+    transform: translateY(-100%)
+    opacity: 0
 
+.prompt-fade-enter-active, .prompt-fade-leave-active
+    transition: transform v.$prompt-trans-time ease-out, opacity v.$prompt-trans-time ease-out
+
+.prompt-fade-leave-to
+    transform: translateY(100%)
+    opacity: 0
 </style>
