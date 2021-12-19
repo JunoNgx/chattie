@@ -65,11 +65,11 @@
     // border: 1px solid red
     margin: auto
     padding: 1rem
-    width: 50%
+    width: 70%
     height: 50%
     font-size: 1.25rem
     +m.mobile
-        width: 100%
+        width: 90%
 
     &__items
         // background-color: red

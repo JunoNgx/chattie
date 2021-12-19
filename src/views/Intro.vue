@@ -44,9 +44,9 @@
     margin: auto
     padding: 1rem
     // background-color: red
-    max-width: 60%
+    max-width: 70%
     +m.mobile
-        max-width: 100%
+        max-width: 90%
 
     img
         max-width: 100%
