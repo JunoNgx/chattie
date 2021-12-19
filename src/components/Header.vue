@@ -42,9 +42,11 @@
         margin: 0.5rem
         width: min-content
         padding: 0.5rem 3rem
-        border-radius: 10rem
+        // border-radius: 10rem
         font-size: 1.5rem
-        background-color: v.$acc-green
+        // background-color: v.$acc-green
+        background: linear-gradient(90deg, v.$acc-green 50%, v.$acc-magenta 50%)
+        color: #fff
     
     &__navbar
         display: flex
@@ -53,13 +55,17 @@
         margin: 0.5rem
 
         &__item
-            margin: 0.5rem
+            // margin: 0.5rem
             text-decoration: none
             font-size: 1.25rem
             cursor: pointer
+            padding: 0.5rem
             +m.regular-text-col
+            +m.transition(background-color)
+            
             &:hover
-                text-decoration: underline
+                // text-decoration: underline
+                background-color: v.$acc-green
 
     +m.mobile
         display: block
