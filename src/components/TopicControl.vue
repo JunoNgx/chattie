@@ -76,8 +76,8 @@
     margin: auto
     overflow: hidden
     max-height: 2rem
-    // +m.transition(max-height)
-    transition: max-height 250ms
+    +m.transition(max-height)
+    // transition: max-height 250ms
     
     &--is-expanded
         // Will need to manually calculate this each time new topics are added
@@ -126,7 +126,12 @@
             border: 1px solid aquamarine
             border-radius: 25px
             cursor: pointer
+            user-select: none
+            color: white
+            +m.transition(background-color)
+
             &--is-enabled
+                color: black
                 background-color: cyan
 
 </style>
