@@ -15,17 +15,13 @@
             this.$store.commit("setTopicData", topicData)
 
             if (localStorage.getItem('enabledTopics')) {
-                // this.$store.enabledTopics = JSON.parse(localStorage.getItem('enabledTopics')!)
-                // this.$store.
                 this.$store.commit(
                     "marshalTopicsFromJson",
                     JSON.parse(localStorage.getItem('enabledTopics')!)
                 )
             } else {
-                // this.resetTopicsToDefault()
                 this.$store.commit('resetDefault')
             }
-            // console.log(this.enabledTopics)
         },
     })
 </script>
@@ -33,9 +29,6 @@
 
 <template>
     <Header/>
-        <!-- <transition :name="fade" mode="out-in">
-            <router-view/>
-        </transition> -->
         <router-view v-slot="{ Component }">
             <transition mode="out-in" appear>
                 <component :is="Component" />

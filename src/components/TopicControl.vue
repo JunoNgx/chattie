@@ -1,41 +1,18 @@
 <script lang="ts">
     import { defineComponent } from 'vue'
-    // import type Topic from "../models/Topic"
 
     export default defineComponent({
         name: "topic-control",
         data() {
             return {
-                // topicData: [] as Topic[],
-                // enabledTopics: [] as number[],
                 isExpanded: false as boolean
             }
         },
-        // props: {
-        //     topicData: Array,
-        //     enabledTopics: Array
-        // },
-        // mounted() {
-        //     // this.topicData = this.$store.getters.getTopicData
-        //     // this.enabledTopics = this.$store.getters.getEnabledTopics
-
-        //     // console.log(this.enabledTopics)
-        //     // console.log(this.topicData);
-        //     // console.log(this.enabledTopics);
-        // },
         methods: {
             toggleExpand() {
                 this.isExpanded = !this.isExpanded
-                // console.log(this.isExpanded)
             },
             updateTopicStatus(topicId: number) {
-                // const index = this.enabledTopics?.indexOf(topicId)
-                // if (index !== undefined && index === -1) {
-                //     this.enabledTopics?.push(topicId)
-                // } else {
-                //     this.enabledTopics?.splice(index, 1)
-                // }
-                // this.$emit("update-topic-status", topicId)
                 this.$store.commit("updateTopicStatus", topicId)
             }
         }
@@ -94,17 +71,11 @@
         max-width: 90%
     
     &--is-expanded
-        // Will need to manually calculate this each time new topics are added
-        // max-height: 100px
-        max-height: 95vh
+        // Might need to be changed with new topics added
+        max-height: 50vh
 
     &__expand-button
-        // border: 1px solid yellow
-        // margin: auto
-        // position: relative
         cursor: pointer
-        // display: flex
-        // align-items: center
         text-align: center
         height: 2rem
         margin-bottom: 1rem
@@ -120,10 +91,7 @@
             display: inline-block
             width: 1rem
             height: 1rem
-            // background-color: cyan
-            // position: absolute
             right: 0%
-            // top: 50% - width/2
             border-right: 5px solid v.$acc-green
             border-bottom: 5px solid v.$acc-green
             transform: rotate(45deg)

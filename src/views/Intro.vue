@@ -43,7 +43,6 @@
 .intro
     margin: auto
     padding: 1rem
-    // background-color: red
     max-width: 70%
     +m.mobile
         max-width: 90%
@@ -58,23 +57,15 @@
         width: 80%
 
         &__image
-            // margin: auto
             text-align: center
 
     &__slogan
         text-align: center
 
         &__branding
-            // opacity: 0
-            // display: none
             visibility: none
-            // border: 1px solid red
-            // margin: auto
             display: flex
             align-items: center
             justify-content: center
-            // align-items: flex-end
-            // justify-self: flex-end
-            // flex-wrap: wrap
 
 </style>

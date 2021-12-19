@@ -15,17 +15,10 @@
         components: {
             NoTopicError
         },
-        // props: {
-        //     prompt: String,
-        // },
         methods: {
             getNewPrompt() {
                 const topicData: Topic[] = this.$store.state.topicData
                 const enabledTopics: number[] = this.$store.state.enabledTopics
-
-                // console.log(enabledTopics)
-
-                // Validation is already done in the child component
 
                 if (enabledTopics.length === 0) {
                     this.hasNoTopicEnabled = true
@@ -34,7 +27,6 @@
                     this.hasNoTopicEnabled = false
                 }
 
-                // console.log("get new task from parent")
                 let topicIndex = Math.floor(Math.random() * topicData.length)
                 while (!enabledTopics.includes(topicIndex)) {
                     topicIndex = Math.floor(Math.random() * topicData.length)
@@ -51,32 +43,8 @@
                     this.promptStr = topicData[topicIndex].prompts[promptIndex]
                 }, 600)
 
-                // this.$refs.promptDisplay.hidePrompt()
             },
-            // getNewPrompt() {
-
-
-            //     // this.isShowing = false
-            //     // setTimeout(() => {
-            //     //     this.isShowing = true
-            //     //     this.$emit("get-new-prompt");
-            //     // }, 600)
-            //     this.$emit("get-new-prompt");
-            //     // console.log("get New prompt")
-            // },
-            // hidePrompt() {
-            //     this.isShowing = false
-            // },
-            // showPrompt() {
-            //     this.isShowing = true
-            // }
         },
-        // watch: {
-        //     isShowing: function() {
-        //         // this.isShowing = true
-        //         // this.$emit("get-new-prompt");
-        //     }
-        // }
     })
 </script>
 
@@ -112,16 +80,10 @@
 @use "../styles/vars" as v
 
 .prompt-display
-    // border: 2px solid red
     margin: auto
     width: 50%
     flex-grow: 1.5
     text-align: center
-    // display: flex
-    // flex-direction: column
-    // align-items: center
-    // justify-content: space-around
-    // background-color: #777
 
     &__text-wrapper
         height: 40vh
@@ -133,9 +95,6 @@
         &__text
             font-size: 2rem
             margin-bottom: 4rem
-            // height: 80%
-            // +m.mobile
-            //     font-size: 2rem
     
     &__button
         border: 2px solid v.$acc-green

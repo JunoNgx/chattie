@@ -17,7 +17,6 @@
 <template>
     <div class="header">
         <div class="header__branding">
-            <!-- Chattie -->
             <Logo/>
         </div>
         <div class="header__navbar">
@@ -37,23 +36,11 @@
 
     display: flex
     align-items: center
-    // align-content: space-between
     justify-content: space-between
-    // flex-wrap: wrap
     border-bottom: 1px solid v.$text-light
 
     &__branding
-        // border: 1px solid red
         margin: 0.25rem
-        // margin: 0.5rem
-        // width: min-content
-        // padding: 0.5rem 3rem
-        // // border-radius: 10rem
-        // font-size: 1.5rem
-        // // background-color: v.$acc-green
-        // background: linear-gradient(90deg, v.$acc-green 50%, v.$acc-magenta 50%)
-        // color: #fff
-        // user-select: none
     
     &__navbar
         display: flex
@@ -71,7 +58,6 @@
             +m.transition(background-color)
 
             &:hover
-                // text-decoration: underline
                 background-color: v.$acc-green
 
     +m.mobile

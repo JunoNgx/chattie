@@ -1,6 +1,5 @@
 <script lang="ts">
     import { defineComponent } from 'vue'
-    // import ModalBase from './ModalBase.vue'
 
     export default defineComponent ({
         name: "SettingsDialog",
@@ -9,18 +8,8 @@
                 localDarkModeValue: this.$store.state.isDarkMode as boolean
             }
         },
-        // props: {
-        //     // darkModeValue: Boolean,
-        //     // updateDarkMode: Function,
-        //     // resetDefault: Function,
-        //     // close: Function,
-        // },
-        // components: {
-        //     ModalBase
-        // },
         methods: {
             updateDarkMode() {
-                // this.$emit('update-dark-mode', this.localDarkModeValue)
                 this.$store.commit("setIsDarkMode", this.localDarkModeValue)
             },
             resetDefaultHandler() {
@@ -62,7 +51,6 @@
 @use "../styles/vars" as v
 
 .settings
-    // border: 1px solid red
     margin: auto
     padding: 1rem
     width: 70%
@@ -72,25 +60,14 @@
         width: 90%
 
     &__items
-        // background-color: red
         margin-bottom: 10rem
 
         &__item
             margin: 0.5rem
     
     &__buttons
-        // position: relative
 
         &__button
-            // border: 1px solid v.$text-light
-            // background-color: v.$bg-light
-            // cursor: pointer
-            // width: fit-content
-            // font-family: v.$font-stack
-            // font-size: 1.25rem
-            // margin: 1rem
-            // padding: 0.75rem
-            // color: v.$text-light
             float: right
             +m.transition(color, background-color, width, height)
 

@@ -14,9 +14,4 @@
     font-size: 1.2rem
     text-align: center
 
-    // a
-    //     color: v.$acc-green
-    //     &:visited
-    //         color: v.$acc-green
-
 </style>

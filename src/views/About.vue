@@ -19,12 +19,9 @@
 @use "../styles/vars" as v
 
 .about
-    // border: 1px solid red
-
     margin: auto
     padding: 1rem
     width: 70%
-    // height: 50%
     font-size: 1.25rem
     +m.mobile
         width: 90%

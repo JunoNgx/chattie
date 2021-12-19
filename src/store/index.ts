@@ -34,7 +34,6 @@ export default createStore({
             state.enabledTopics = []
             state.topicData.forEach(topic => {
                 if (topic.isEnabledByDefault) {
-                    // this.enabledTopics.push(topic.id)
                     state.enabledTopics = [...state.enabledTopics, topic.id]
                 }
             })
@@ -44,8 +43,4 @@ export default createStore({
     },
     modules: {
     },
-    // getters: {
-    //     topicData: (state) => state.topicData,
-    //     enabledTopics: (state) => state.enabledTopics
-    // }
 })
