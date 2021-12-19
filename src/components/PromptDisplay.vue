@@ -1,26 +1,75 @@
 <script lang="ts">
     import { defineComponent } from 'vue';
+    import type Topic from "../models/Topic"
+    import NoTopicError from "../components/NoTopicError.vue"
 
     export default defineComponent({
         name: "prompt-display",
         data() {
             return {
-                isShowing: true as boolean
+                promptStr: "Let's get you something to talk about" as string,
+                isShowing: true as boolean,
+                hasNoTopicEnabled: false as boolean,
             }
         },
-        props: {
-            prompt: String,
+        components: {
+            NoTopicError
         },
+        // props: {
+        //     prompt: String,
+        // },
         methods: {
             getNewPrompt() {
+                const topicData: Topic[] = this.$store.state.topicData
+                const enabledTopics: number[] = this.$store.state.enabledTopics
+
+                // console.log(enabledTopics)
+
+                // Validation is already done in the child component
+
+                if (enabledTopics.length === 0) {
+                    this.hasNoTopicEnabled = true
+                    return
+                } else {
+                    this.hasNoTopicEnabled = false
+                }
+
+                // console.log("get new task from parent")
+                let topicIndex = Math.floor(Math.random() * topicData.length)
+                while (!enabledTopics.includes(topicIndex)) {
+                    topicIndex = Math.floor(Math.random() * topicData.length)
+                }
+
+                let promptIndex = Math.floor(Math.random() * topicData[topicIndex].prompts.length)
+                while (this.promptStr === topicData[topicIndex].prompts[promptIndex]) {
+                    promptIndex = Math.floor(Math.random() * topicData[topicIndex].prompts.length)
+                }
+
                 this.isShowing = false
                 setTimeout(() => {
                     this.isShowing = true
-                    this.$emit("get-new-prompt");
+                    this.promptStr = topicData[topicIndex].prompts[promptIndex]
                 }, 600)
-                // this.$emit("get-new-prompt");
-                // console.log("get New prompt")
-            }
+
+                // this.$refs.promptDisplay.hidePrompt()
+            },
+            // getNewPrompt() {
+
+
+            //     // this.isShowing = false
+            //     // setTimeout(() => {
+            //     //     this.isShowing = true
+            //     //     this.$emit("get-new-prompt");
+            //     // }, 600)
+            //     this.$emit("get-new-prompt");
+            //     // console.log("get New prompt")
+            // },
+            // hidePrompt() {
+            //     this.isShowing = false
+            // },
+            // showPrompt() {
+            //     this.isShowing = true
+            // }
         },
         // watch: {
         //     isShowing: function() {
@@ -39,7 +88,7 @@
                     class="prompt-display__text-wrapper__text"
                     v-show=this.isShowing
                 >
-                    {{prompt}}
+                    {{promptStr}}
                 </p>
             </transition>
         </div>
@@ -51,6 +100,9 @@
                 Get new topic
             </span>
         </button>
+        <NoTopicError
+            v-if=hasNoTopicEnabled
+        />
     </div>
 </template>
 

@@ -2,11 +2,11 @@
     import { defineComponent } from 'vue';
     
     // import topicData from "../data/topics.json"
-    import type Topic from "../models/Topic"
+    // import type Topic from "../models/Topic"
     // import Header from "./Header.vue"
     import TopicControl   from "../components/TopicControl.vue"
     import PromptDisplay  from "../components/PromptDisplay.vue"
-    import NoTopicError   from "../components/NoTopicError.vue"
+    // import NoTopicError   from "../components/NoTopicError.vue"
     // import Footer         from "../components/Footer.vue"
     // import SettingsDialog from "../components/SettingsDialog.vue"
     // import AboutDialog    from "../components/AboutDialog.vue"
@@ -20,7 +20,7 @@
             // Header,
             TopicControl,
             PromptDisplay,
-            NoTopicError,
+            // NoTopicError,
             // Footer,
 
             // SettingsDialog,
@@ -29,9 +29,8 @@
         data() {
             return {
                 // topicData: topicData as Topic[],
-                promptStr: "Let's get you something to talk about" as string,
+                
                 // enabledTopics: [] as number[],
-                hasNoTopicEnabled: false as boolean,
                 // isShowingAboutDialog: false as boolean,
                 // isShowingSettingsDialog: false as boolean,
                 // isDarkMode: false as boolean
@@ -49,50 +48,55 @@
         methods: {
 
             // Data control methods
-            getNewPrompt() {
-                const topicData: Topic[] = this.$store.state.topicData
-                const enabledTopics: number[] = this.$store.state.enabledTopics
+            // getNewPrompt() {
+            //     const topicData: Topic[] = this.$store.state.topicData
+            //     const enabledTopics: number[] = this.$store.state.enabledTopics
 
-                // console.log(enabledTopics)
+            //     // console.log(enabledTopics)
 
-                if (enabledTopics.length === 0) {
-                    this.hasNoTopicEnabled = true
-                    return
-                } else {
-                    this.hasNoTopicEnabled = false
-                }
+            //     // Validation is already done in the child component
+
+            //     if (enabledTopics.length === 0) {
+            //         this.hasNoTopicEnabled = true
+            //         return
+            //     } else {
+            //         this.hasNoTopicEnabled = false
+            //     }
 
 
-                // console.log("get new task from parent")
-                let topicIndex = Math.floor(Math.random() * topicData.length)
-                while (!enabledTopics.includes(topicIndex)) {
-                    topicIndex = Math.floor(Math.random() * topicData.length)
-                }
+            //     // console.log("get new task from parent")
+            //     let topicIndex = Math.floor(Math.random() * topicData.length)
+            //     while (!enabledTopics.includes(topicIndex)) {
+            //         topicIndex = Math.floor(Math.random() * topicData.length)
+            //     }
 
-                let promptIndex = Math.floor(Math.random() * topicData[topicIndex].prompts.length)
-                while (this.promptStr === topicData[topicIndex].prompts[promptIndex]) {
-                    promptIndex = Math.floor(Math.random() * topicData[topicIndex].prompts.length)
-                }
-                this.promptStr = topicData[topicIndex].prompts[promptIndex]
-                // if (this.enabledTopics.length === 0) {
-                //     // alert("No topic enabled. Please choose some topics first.")
-                //     this.hasNoTopicEnabled = true
-                //     return
-                // } else {
-                //     this.hasNoTopicEnabled = false
-                // }
+            //     let promptIndex = Math.floor(Math.random() * topicData[topicIndex].prompts.length)
+            //     while (this.promptStr === topicData[topicIndex].prompts[promptIndex]) {
+            //         promptIndex = Math.floor(Math.random() * topicData[topicIndex].prompts.length)
+            //     }
+            //     this.promptStr = topicData[topicIndex].prompts[promptIndex]
 
-                // // console.log("get new task from parent")
-                // let topicIndex = Math.floor(Math.random() * topicData.length)
-                // while (!this.enabledTopics.includes(topicIndex)) {
-                //     topicIndex = Math.floor(Math.random() * topicData.length)
-                // }
-                // let promptIndex = Math.floor(Math.random() * topicData[topicIndex].prompts.length)
-                // while (this.promptStr === topicData[topicIndex].prompts[promptIndex]) {
-                //     promptIndex = Math.floor(Math.random() * topicData[topicIndex].prompts.length)
-                // }
-                // this.promptStr = topicData[topicIndex].prompts[promptIndex]
-            },
+            //     this.$refs.promptDisplay.hidePrompt()
+
+            //     // if (this.enabledTopics.length === 0) {
+            //     //     // alert("No topic enabled. Please choose some topics first.")
+            //     //     this.hasNoTopicEnabled = true
+            //     //     return
+            //     // } else {
+            //     //     this.hasNoTopicEnabled = false
+            //     // }
+
+            //     // // console.log("get new task from parent")
+            //     // let topicIndex = Math.floor(Math.random() * topicData.length)
+            //     // while (!this.enabledTopics.includes(topicIndex)) {
+            //     //     topicIndex = Math.floor(Math.random() * topicData.length)
+            //     // }
+            //     // let promptIndex = Math.floor(Math.random() * topicData[topicIndex].prompts.length)
+            //     // while (this.promptStr === topicData[topicIndex].prompts[promptIndex]) {
+            //     //     promptIndex = Math.floor(Math.random() * topicData[topicIndex].prompts.length)
+            //     // }
+            //     // this.promptStr = topicData[topicIndex].prompts[promptIndex]
+            // },
             // updateTopicStatus(topicId: number) {
             //     const index = this.enabledTopics.indexOf(topicId)
             //     if (index === -1) { // If not currently in the enabled list
@@ -145,12 +149,10 @@
                 /> -->
                 <TopicControl/>
                 <PromptDisplay
-                    :prompt=promptStr
-                    @get-new-prompt="getNewPrompt"
                 />
-                <NoTopicError
+                <!-- <NoTopicError
                     v-if=hasNoTopicEnabled
-                />
+                /> -->
                 <!-- <Footer /> -->
 
                 <!-- <SettingsDialog
