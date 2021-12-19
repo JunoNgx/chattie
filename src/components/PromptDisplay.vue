@@ -49,7 +49,7 @@
     // background-color: #777
 
     &__text-wrapper
-        height: 50vh
+        height: 40vh
         vertical-align: center
         display: flex
         justify-content: center
