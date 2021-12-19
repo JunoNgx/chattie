@@ -82,4 +82,7 @@ a.header__navbar__item
     &:visited
         color: v.$text-light
 
+a.router-link-active
+    text-decoration: underline
+
 </style>
