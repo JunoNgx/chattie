@@ -47,6 +47,7 @@
         // background-color: v.$acc-green
         background: linear-gradient(90deg, v.$acc-green 50%, v.$acc-magenta 50%)
         color: #fff
+        user-select: none
     
     &__navbar
         display: flex
@@ -62,7 +63,7 @@
             padding: 0.5rem
             +m.regular-text-col
             +m.transition(background-color)
-            
+
             &:hover
                 // text-decoration: underline
                 background-color: v.$acc-green

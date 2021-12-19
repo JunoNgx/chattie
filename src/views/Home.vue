@@ -136,29 +136,33 @@
 </script>
 
 <template>
-    <!-- <Header
-        :showAboutDialog=showAboutDialog
-        :showSettingsDialog=showSettingsDialog
-    /> -->
-    <TopicControl/>
-    <PromptDisplay
-        :prompt=promptStr
-        @get-new-prompt="getNewPrompt"
-    />
-    <NoTopicError
-        v-if=hasNoTopicEnabled
-    />
-    <!-- <Footer /> -->
+    <!-- <transition name="fade" mode="out-in">
+        <div> -->
+            <!-- <Header
+                :showAboutDialog=showAboutDialog
+                :showSettingsDialog=showSettingsDialog
+            /> -->
+            <TopicControl/>
+            <PromptDisplay
+                :prompt=promptStr
+                @get-new-prompt="getNewPrompt"
+            />
+            <NoTopicError
+                v-if=hasNoTopicEnabled
+            />
+            <!-- <Footer /> -->
 
-    <!-- <SettingsDialog
-        v-show=isShowingSettingsDialog
-        :darkModeValue=isDarkMode
-        :updateDarkMode=updateDarkMode
-        :resetDefault=resetTopicsToDefault
-        :close=closeSettingsDialog
-    />
-    <AboutDialog
-        v-show=isShowingAboutDialog
-        :close=closeAboutDialog
-    /> -->
+            <!-- <SettingsDialog
+                v-show=isShowingSettingsDialog
+                :darkModeValue=isDarkMode
+                :updateDarkMode=updateDarkMode
+                :resetDefault=resetTopicsToDefault
+                :close=closeSettingsDialog
+            />
+            <AboutDialog
+                v-show=isShowingAboutDialog
+                :close=closeAboutDialog
+            /> -->
+        <!-- </div>
+    </transition> -->
 </template>
