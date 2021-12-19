@@ -1,144 +1,17 @@
 <script lang="ts">
-    import { defineComponent } from 'vue';
-    import type Topic from "./models/Topic"
-    import topicData from "./data/topics.json"
+    import { defineComponent } from 'vue'
+    import Home from "./components/Home.vue"
 
-    import Header from "./components/Header.vue"
-    import TopicControl from "./components/TopicControl.vue"
-    import PromptDisplay from "./components/PromptDisplay.vue"
-    import NoTopicError from "./components/NoTopicError.vue"
-    import Footer from "./components/Footer.vue"
-
-    import SettingsDialog from "./components/SettingsDialog.vue"
-    import AboutDialog from "./components/AboutDialog.vue"
-
-    // let promptStr = "Let's get you something to talk about";
-    // let enabledTopics: number[] = [];
-
-    export default defineComponent ({
+    export default defineComponent({
         name: "App",
         components: {
-            Header,
-            TopicControl,
-            PromptDisplay,
-            NoTopicError,
-            Footer,
-
-            SettingsDialog,
-            AboutDialog
-        },
-        data() {
-            return {
-                topicData: topicData as Topic[],
-                promptStr: "Let's get you something to talk about" as string,
-                enabledTopics: [] as number[],
-                hasNoTopicEnabled: false as boolean,
-                isShowingAboutDialog: false as boolean,
-                isShowingSettingsDialog: false as boolean,
-                isDarkMode: false as boolean
-            }
-        },
-        mounted: function() {
-
-            if (localStorage.getItem('enabledTopics')) {
-                this.enabledTopics = JSON.parse(localStorage.getItem('enabledTopics')!)
-            } else {
-                this.resetTopicsToDefault()
-            }
-            // console.log(this.enabledTopics)
-        },
-        methods: {
-
-            // Data control methods
-            getNewPrompt() {
-                if (this.enabledTopics.length === 0) {
-                    // alert("No topic enabled. Please choose some topics first.")
-                    this.hasNoTopicEnabled = true
-                    return
-                } else {
-                    this.hasNoTopicEnabled = false
-                }
-
-                // console.log("get new task from parent")
-                let topicIndex = Math.floor(Math.random() * topicData.length)
-                while (!this.enabledTopics.includes(topicIndex)) {
-                    topicIndex = Math.floor(Math.random() * topicData.length)
-                }
-                let promptIndex = Math.floor(Math.random() * topicData[topicIndex].prompts.length)
-                while (this.promptStr === topicData[topicIndex].prompts[promptIndex]) {
-                    promptIndex = Math.floor(Math.random() * topicData[topicIndex].prompts.length)
-                }
-                this.promptStr = topicData[topicIndex].prompts[promptIndex]
-            },
-            updateTopicStatus(topicId: number) {
-                const index = this.enabledTopics.indexOf(topicId)
-                if (index === -1) { // If not currently in the enabled list
-                    this.enabledTopics.push(topicId)
-                } else {
-                    this.enabledTopics.splice(index, 1)
-                }
-
-                localStorage.setItem('enabledTopics', JSON.stringify(this.enabledTopics))
-                // console.log(this.enabledTopics)
-            },
-            updateDarkMode(darkModeValue: boolean) {
-                this.isDarkMode = darkModeValue
-                // console.log(this.isDarkMode)
-            },
-            resetTopicsToDefault() {
-                this.enabledTopics = []
-                topicData.forEach(topic => {
-                    if (topic.isEnabledByDefault) {this.enabledTopics.push(topic.id)}
-                })
-            },
-
-            // UI and navigational methods
-            showSettingsDialog() {
-                this.isShowingSettingsDialog = true
-            },
-            closeSettingsDialog() {
-                this.isShowingSettingsDialog = false
-            },
-            showAboutDialog() {
-                this.isShowingAboutDialog = true
-            },
-            closeAboutDialog() {
-                this.isShowingAboutDialog = false
-            },
+            Home
         }
     })
 </script>
 
 <template>
-    <Header
-        :showAboutDialog=showAboutDialog
-        :showSettingsDialog=showSettingsDialog
-    />
-    <TopicControl
-        :topicData=topicData
-        :enabledTopics=enabledTopics
-        @update-topic-status="updateTopicStatus"
-    />
-    <PromptDisplay
-        :prompt=promptStr
-        @get-new-prompt="getNewPrompt"
-    />
-    <NoTopicError
-        v-if=hasNoTopicEnabled
-    />
-    <Footer />
-
-    <SettingsDialog
-        v-show=isShowingSettingsDialog
-        :darkModeValue=isDarkMode
-        :updateDarkMode=updateDarkMode
-        :resetDefault=resetTopicsToDefault
-        :close=closeSettingsDialog
-    />
-    <AboutDialog
-        v-show=isShowingAboutDialog
-        :close=closeAboutDialog
-    />
+   <Home/>
 </template>
 
 <style lang="sass">
@@ -152,10 +25,11 @@
     -moz-osx-font-smoothing: grayscale
     border: 1px solid #111
     margin: auto
-    max-width: 1280px
+    max-width: 60%
     min-height: 90vh
     background-color: #255
-    // @include m.mobile
+    @include m.mobile
+        max-width: 100%
     //     background-color: #255
 
 </style>
