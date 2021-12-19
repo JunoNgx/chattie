@@ -14,13 +14,13 @@
 </script>
 
 <template>
-    <modal-base :close="close">
+    <ModalBase :title="About" :close="close">
         <div class="about-content">
             <p>
                 Chattie is a web application made by Juno Nguyen.
             </p>
         </div>
-    </modal-base>
+    </ModalBase>
 </template>
 
 <style lang="sass" scope>

@@ -9,6 +9,8 @@
     import NoTopicError from "./components/NoTopicError.vue"
     import Footer from "./components/Footer.vue"
 
+    import AboutDialog from "./components/AboutDialog.vue"
+
     // let promptStr = "Let's get you something to talk about";
     // let enabledTopics: number[] = [];
 
@@ -19,14 +21,18 @@
             TopicControl,
             PromptDisplay,
             NoTopicError,
-            Footer
+            Footer,
+
+            AboutDialog
         },
         data() {
             return {
                 topicData: topicData as Topic[],
                 promptStr: "Let's get you something to talk about" as string,
                 enabledTopics: [] as number[],
-                hasNoTopicEnabled: false as boolean
+                hasNoTopicEnabled: false as boolean,
+                isShowingAboutDialog: false as boolean,
+                isShowingSettingsDialog: false as boolean
             }
         },
         mounted: function() {
@@ -39,6 +45,8 @@
             // console.log(this.enabledTopics)
         },
         methods: {
+
+            // Data control methods
             getNewPrompt() {
                 if (this.enabledTopics.length === 0) {
                     // alert("No topic enabled. Please choose some topics first.")
@@ -75,13 +83,30 @@
                 topicData.forEach(topic => {
                     if (topic.isEnabledByDefault) {this.enabledTopics.push(topic.id)}
                 })
+            },
+
+            // UI and navigational methods
+            showAboutDialog() {
+                this.isShowingAboutDialog = true
+            },
+            closeAboutDialog() {
+                this.isShowingAboutDialog = false
+            },
+            showSettingsDialog() {
+                this.isShowingSettingsDialog = true
+            },
+            closeSettingsDialog() {
+                this.isShowingSettingsDialog = false
             }
         }
     })
 </script>
 
 <template>
-    <Header/>
+    <Header
+        :showAboutDialog=showAboutDialog
+        :showSettingsDialog=showSettingsDialog
+    />
     <TopicControl
         :topicData=topicData
         :enabledTopics=enabledTopics
@@ -95,6 +120,8 @@
         v-if=hasNoTopicEnabled
     />
     <Footer />
+
+    <AboutDialog v-if=isShowingAboutDialog :close=closeAboutDialog />
 </template>
 
 <style lang="sass">
