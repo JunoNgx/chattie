@@ -1,10 +1,10 @@
 <template>
     <div class="about">
-        <p><strong>Chattie</strong> is a conversational utility that provides prompts to conversations. Be it strangers at the airports, new co-workers, or romantic dates; here's where you get your conversation prompt fix.</p>
+        <p><strong>Chattie</strong> is a conversational utility that provides prompts to conversations. Be it strangers at the airport, new co-workers, or romantic dates; here's where you get your conversation prompt fix.</p>
 
-        <p>This website is also a <strong>Progressive Web App</strong>, meaning it can be launched directly from the home screen of your smartphone, and function as a native app. For more information, checkout the <a href="https://developer.mozilla.org/en-US/docs/MDN/About" rel="noopener noreferrer" target="_blank">Mozilla Developer Network's article</a>.</p>
+        <p>This website is also a <strong>Progressive Web App</strong>, meaning it can be launched directly from the home screen of your smartphone, and function as a native app. For more information, check out the <a href="https://developer.mozilla.org/en-US/docs/MDN/About" rel="noopener noreferrer" target="_blank">Mozilla Developer Network's article</a>.</p>
 
-        <p>Of course, the heart of the application is the archive of prompts, sorted by topics. This is a long work of progress and new topics are expectedly added over time. If you would like to contribute, please send an email to <a href="juno.ngx@gmail.com" rel="noopener noreferrer" target="_blank">juno.ngx@gmail.com</a>, or <a href="https://twitter.com/JunoNgx" rel="noopener noreferrer" target="_blank">tweet me</a>, or even better yet, if you are the techie type of person, create a pull request at the project's repository.</p>
+        <p>Of course, the heart of the application is the archive of prompts, sorted by topics. This is a work-in-progress and new topics are expectedly added over time. If you would like to contribute, please send an email to <a href="juno.ngx@gmail.com" rel="noopener noreferrer" target="_blank">juno.ngx@gmail.com</a>, <a href="https://twitter.com/JunoNgx" rel="noopener noreferrer" target="_blank">tweet me</a>, or even better yet, if you are the techie type of person, create a pull request at the project's repository.</p>
 
         <p>This project is <a href="https://github.com/JunoNgx/Chattie" rel="noopener noreferrer" target="_blank">open-sourced</a> and welcomes contributions.</p>
 
