@@ -1,8 +1,8 @@
 <script lang="ts">
     import { defineComponent } from 'vue';
     import type Topic from "./models/Topic"
-
     import topicData from "./data/topics.json"
+
     import Header from "./components/Header.vue"
     import TopicControl from "./components/TopicControl.vue"
     import PromptDisplay from "./components/PromptDisplay.vue"
