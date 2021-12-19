@@ -68,7 +68,7 @@
         cursor: pointer
         width: fit-content
         font-family: v.$font-stack
-        font-size: 1.25rem
+        font-size: 1.5rem
         padding: 1rem 2rem
         color: v.$acc-green
         +m.transition(color, background-color, width, height)
