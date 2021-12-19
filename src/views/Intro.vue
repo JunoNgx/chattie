@@ -1,5 +1,13 @@
 <script lang="ts">
+    import { defineComponent } from 'vue'
+    // import Logo from "../components/Logo.vue"
 
+    export default defineComponent ({
+        name: "Intro",
+        components: {
+            // Logo
+        }
+    })
 </script>
 
 <template>
@@ -12,7 +20,7 @@
         </div>
         <div class="intro__slogan">
             <div class="intro__slogan__branding" >
-                <h1>Chattie</h1>
+                <!-- <Logo/> -->
             </div>
             <div class="intro__slogan__subtitle" >
                 <h2>Getting stuck in your conversation? Not sure what to talk about?</h2>
@@ -33,10 +41,10 @@
 @use "../styles/vars" as v
 
 .intro
-    margin: 1rem auto
+    margin: auto
     padding: 1rem
     // background-color: red
-    max-width: 70%
+    max-width: 60%
     +m.mobile
         max-width: 100%
 
@@ -46,7 +54,7 @@
         border-radius: 100%
 
     &__image-wrapper
-        margin: auto
+        margin: 1rem auto
         width: 80%
 
         &__image
@@ -55,5 +63,18 @@
 
     &__slogan
         text-align: center
+
+        &__branding
+            // opacity: 0
+            // display: none
+            visibility: none
+            // border: 1px solid red
+            // margin: auto
+            display: flex
+            align-items: center
+            justify-content: center
+            // align-items: flex-end
+            // justify-self: flex-end
+            // flex-wrap: wrap
 
 </style>

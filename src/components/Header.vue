@@ -1,20 +1,25 @@
 <script lang="ts">
     import { defineComponent } from 'vue'
+    import Logo from "./Logo.vue"
 
     export default defineComponent ({
         name: "Header",
         props: {
             showAboutDialog: Function,
             showSettingsDialog: Function
+        },
+        components: {
+            Logo
         }
     })
 </script>
 
 <template>
     <div class="header">
-        <p class="header__branding">
-            Chattie
-        </p>
+        <div class="header__branding">
+            <!-- Chattie -->
+            <Logo/>
+        </div>
         <div class="header__navbar">
             <router-link class="header__navbar__item" to="/home">Home</router-link>
             <router-link class="header__navbar__item" to="/settings">Settings</router-link>
@@ -39,21 +44,22 @@
 
     &__branding
         // border: 1px solid red
-        margin: 0.5rem
-        width: min-content
-        padding: 0.5rem 3rem
-        // border-radius: 10rem
-        font-size: 1.5rem
-        // background-color: v.$acc-green
-        background: linear-gradient(90deg, v.$acc-green 50%, v.$acc-magenta 50%)
-        color: #fff
-        user-select: none
+        margin: 0.25rem
+        // margin: 0.5rem
+        // width: min-content
+        // padding: 0.5rem 3rem
+        // // border-radius: 10rem
+        // font-size: 1.5rem
+        // // background-color: v.$acc-green
+        // background: linear-gradient(90deg, v.$acc-green 50%, v.$acc-magenta 50%)
+        // color: #fff
+        // user-select: none
     
     &__navbar
         display: flex
         align-items: center
         justify-content: flex-end
-        margin: 0.5rem
+        margin: 0.25rem
 
         &__item
             // margin: 0.5rem
