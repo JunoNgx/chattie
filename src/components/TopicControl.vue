@@ -58,7 +58,10 @@
         </div>
 
         <!-- List of available topics -->
-        <div class="topic-settings__topic-wrapper">
+        <div
+            class="topic-settings__topic-wrapper"
+            :class="{'topic-settings__topic-wrapper--is-expanded':isExpanded}"
+        >
             <p
                 class="topic-settings__topic-wrapper__item"
                 v-for="topic in this.$store.state.topicData" :key="topic.name"
@@ -77,22 +80,24 @@
 <style lang="sass">
 
 @use "../styles/mixins" as m
+@use "../styles/vars" as v
 
 .topic-settings
-    border: 1px solid blue
-    // width: min-content
-    margin: auto
+    border: 1px solid v.$text-light
+    margin: 2rem auto
+    padding: 0.5rem
     overflow: hidden
+    // width: 60%
     max-height: 2rem
     +m.transition(max-height)
-    // transition: max-height 250ms
     
     &--is-expanded
         // Will need to manually calculate this each time new topics are added
-        max-height: 100px
+        // max-height: 100px
+        max-height: 95vh
 
     &__expand-button
-        border: 1px solid yellow
+        // border: 1px solid yellow
         // margin: auto
         // position: relative
         cursor: pointer
@@ -100,6 +105,11 @@
         // align-items: center
         text-align: center
         height: 2rem
+        margin-bottom: 1rem
+        border-bottom: 2px solid v.$bg-light
+        +m.transition(border-bottom)
+        &:hover
+            border-bottom: 2px solid v.$acc-green
 
         &__text
             font-size: 1.5rem
@@ -112,8 +122,8 @@
             // position: absolute
             right: 0%
             // top: 50% - width/2
-            border-right: 5px solid cyan
-            border-bottom: 5px solid cyan
+            border-right: 5px solid v.$acc-green
+            border-bottom: 5px solid v.$acc-green
             transform: rotate(45deg)
             transform-origin: 100% 100%
             margin-left: 1rem
@@ -127,19 +137,26 @@
         display: flex
         align-items: center
         justify-content: center
-        gap: 0.5rem
+        flex-wrap: wrap
+        gap: 0.5rem 1rem
+        opacity: 0
+        @include m.transition(opacity)
+
+        &--is-expanded
+            opacity: 1
 
         &__item
-            padding: 0.7rem
-            border: 1px solid aquamarine
-            border-radius: 25px
+            margin: 0
+            padding: 0.4rem
+            border: 2px solid v.$acc-green
+            // border-radius: 25px
             cursor: pointer
             user-select: none
-            color: white
+            +m.regular-text-col
             +m.transition(background-color)
 
             &--is-enabled
                 color: black
-                background-color: cyan
+                background-color: v.$acc-green
 
 </style>

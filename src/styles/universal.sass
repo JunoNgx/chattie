@@ -1,7 +1,25 @@
+@use "./mixins" as m
+@use "./vars" as v
+    
 #app
-    font-family: 'Zilla Slab', serif
-    -webkit-font-smoothing: antialiased
-    -moz-osx-font-smoothing: grayscale
+    
+    // border: 1px solid v.$text-light
+    margin: 0rem auto
+    max-width: 60%
+    min-height: 90vh    
+    // color: v.$text-light
+
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+    +m.regular-text-col
+    +m.mobile
+        max-width: 100%
     
 body
-    background-color: #f00
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    font-family: v.$font-stack
+    background-color: v.$bg-light
+    font-weight: 400

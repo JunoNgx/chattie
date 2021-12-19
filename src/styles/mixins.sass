@@ -1,7 +1,7 @@
-@use "./vars"
+@use "./vars" as v
 
 @mixin mobile
-    @media screen and (max-width: vars.$break-point)
+    @media screen and (max-width: v.$break-point)
         @content
 
 // @mixin transition($element)
@@ -10,5 +10,8 @@
 @mixin transition($elements...)
     $transition: ()
     @each $el in $elements 
-        $transition:append($transition, $el vars.$trans-time ease-out, $separator: comma)
+        $transition:append($transition, $el v.$trans-time ease-out, $separator: comma)
     transition: $transition
+
+@mixin regular-text-col
+    color: v.$text-light

@@ -46,6 +46,6 @@
     </div>
 </template>
 
-<style lang="sass" scope>
+<style lang="sass">
 
 </style>
