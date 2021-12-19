@@ -90,6 +90,8 @@
     max-width: 60%
     max-height: 2rem
     +m.transition(max-height)
+    +m.mobile
+        max-width: 90%
     
     &--is-expanded
         // Will need to manually calculate this each time new topics are added
