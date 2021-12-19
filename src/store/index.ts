@@ -15,6 +15,9 @@ export default createStore({
         setPromptStr (state, newData: string) {
             state.promptStr = newData
         },
+        setIsDarkMode (state, newData: boolean) {
+            state.isDarkMode = newData
+        },
         updateTopicStatus (state, topicId: number) {
             const index = state.enabledTopics.indexOf(topicId)
             if (index === -1) { // If not currently in the enabled list

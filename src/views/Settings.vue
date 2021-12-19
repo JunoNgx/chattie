@@ -6,23 +6,24 @@
         name: "SettingsDialog",
         data() {
             return {
-                localDarkModeValue: this.darkModeValue as boolean
+                localDarkModeValue: this.$store.state.isDarkMode as boolean
             }
         },
-        props: {
-            darkModeValue: Boolean,
-            updateDarkMode: Function,
-            resetDefault: Function,
-            close: Function,
-        },
+        // props: {
+        //     // darkModeValue: Boolean,
+        //     // updateDarkMode: Function,
+        //     // resetDefault: Function,
+        //     // close: Function,
+        // },
         // components: {
         //     ModalBase
         // },
-        // methods: {
-        //     updateDarkMode() {
-        //         this.$emit('update-dark-mode', this.isDarkMode)
-        //     }
-        // }
+        methods: {
+            updateDarkMode() {
+                // this.$emit('update-dark-mode', this.localDarkModeValue)
+                this.$store.commit("setIsDarkMode", this.localDarkModeValue)
+            }
+        }
     })
 </script>
 
@@ -36,7 +37,11 @@
         >
         <label for="dark-mode-checkbox">Dark Mode</label>
         <div class="settings-content">
-            <button @click=resetDefault>Reset topics to default</button>
+            <button
+                @click='this.$store.commit("resetDefault")'
+            >
+                Reset topics to default
+            </button>
         </div>
     </div>
 </template>
