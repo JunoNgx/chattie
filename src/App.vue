@@ -3,6 +3,7 @@
     import type Topic from "./models/Topic"
 
     import topicData from "./data/topics.json"
+    import Header from "./components/Header.vue"
     import TopicControl from "./components/TopicControl.vue"
     import PromptDisplay from "./components/PromptDisplay.vue"
     import NoTopicError from "./components/NoTopicError.vue"
@@ -14,6 +15,7 @@
     export default defineComponent ({
         name: "App",
         components: {
+            Header,
             TopicControl,
             PromptDisplay,
             NoTopicError,
@@ -79,6 +81,7 @@
 </script>
 
 <template>
+    <Header/>
     <TopicControl
         :topicData=topicData
         :enabledTopics=enabledTopics
