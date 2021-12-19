@@ -3,14 +3,13 @@
     import type Topic from "../models/Topic"
     import topicData from "../data/topics.json"
 
-    import Header from "./Header.vue"
-    import TopicControl from "./TopicControl.vue"
-    import PromptDisplay from "./PromptDisplay.vue"
-    import NoTopicError from "./NoTopicError.vue"
-    import Footer from "./Footer.vue"
-
-    import SettingsDialog from "./SettingsDialog.vue"
-    import AboutDialog from "./AboutDialog.vue"
+    // import Header from "./Header.vue"
+    import TopicControl   from "../components/TopicControl.vue"
+    import PromptDisplay  from "../components/PromptDisplay.vue"
+    import NoTopicError   from "../components/NoTopicError.vue"
+    // import Footer         from "../components/Footer.vue"
+    // import SettingsDialog from "../components/SettingsDialog.vue"
+    // import AboutDialog    from "../components/AboutDialog.vue"
 
     // let promptStr = "Let's get you something to talk about";
     // let enabledTopics: number[] = [];
@@ -18,14 +17,14 @@
     export default defineComponent ({
         name: "Home",
         components: {
-            Header,
+            // Header,
             TopicControl,
             PromptDisplay,
             NoTopicError,
-            Footer,
+            // Footer,
 
-            SettingsDialog,
-            AboutDialog
+            // SettingsDialog,
+            // AboutDialog
         },
         data() {
             return {
@@ -110,10 +109,10 @@
 </script>
 
 <template>
-    <Header
+    <!-- <Header
         :showAboutDialog=showAboutDialog
         :showSettingsDialog=showSettingsDialog
-    />
+    /> -->
     <TopicControl
         :topicData=topicData
         :enabledTopics=enabledTopics
@@ -126,9 +125,9 @@
     <NoTopicError
         v-if=hasNoTopicEnabled
     />
-    <Footer />
+    <!-- <Footer /> -->
 
-    <SettingsDialog
+    <!-- <SettingsDialog
         v-show=isShowingSettingsDialog
         :darkModeValue=isDarkMode
         :updateDarkMode=updateDarkMode
@@ -138,5 +137,5 @@
     <AboutDialog
         v-show=isShowingAboutDialog
         :close=closeAboutDialog
-    />
+    /> -->
 </template>

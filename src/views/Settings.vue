@@ -1,6 +1,6 @@
 <script lang="ts">
     import { defineComponent } from 'vue'
-    import ModalBase from './ModalBase.vue'
+    // import ModalBase from './ModalBase.vue'
 
     export default defineComponent ({
         name: "SettingsDialog",
@@ -15,9 +15,9 @@
             resetDefault: Function,
             close: Function,
         },
-        components: {
-            ModalBase
-        },
+        // components: {
+        //     ModalBase
+        // },
         // methods: {
         //     updateDarkMode() {
         //         this.$emit('update-dark-mode', this.isDarkMode)
@@ -27,7 +27,7 @@
 </script>
 
 <template>
-    <ModalBase :title="'Settings'" :close="close">
+    <div>
         <input
             type="checkbox"
             id="dark-mode-checkbox"
@@ -38,7 +38,7 @@
         <div class="settings-content">
             <button @click=resetDefault>Reset topics to default</button>
         </div>
-    </ModalBase>
+    </div>
 </template>
 
 <style lang="sass" scope>

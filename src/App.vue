@@ -1,17 +1,22 @@
 <script lang="ts">
-    import { defineComponent } from 'vue'
-    import Home from "./components/Home.vue"
+    import { defineComponent } from "vue"
+    import Header from "./components/Header.vue"
+    import Footer from "./components/Footer.vue"
 
-    export default defineComponent({
+    export default defineComponent ({
         name: "App",
         components: {
-            Home
+            Header,
+            Footer
         }
     })
 </script>
 
+
 <template>
-   <Home/>
+    <Header/>
+    <router-view/>
+    <Footer/>
 </template>
 
 <style lang="sass">
