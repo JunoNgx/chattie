@@ -6,6 +6,7 @@
     import TopicControl from "./components/TopicControl.vue"
     import PromptDisplay from "./components/PromptDisplay.vue"
     import NoTopicError from "./components/NoTopicError.vue"
+    import Footer from "./components/Footer.vue"
 
     // let promptStr = "Let's get you something to talk about";
     // let enabledTopics: number[] = [];
@@ -15,7 +16,8 @@
         components: {
             TopicControl,
             PromptDisplay,
-            NoTopicError
+            NoTopicError,
+            Footer
         },
         data() {
             return {
@@ -89,6 +91,7 @@
     <NoTopicError
         v-if=hasNoTopicEnabled
     />
+    <Footer />
 </template>
 
 <style lang="sass">
@@ -103,6 +106,7 @@
     border: 1px solid #111
     margin: auto
     max-width: 1280px
+    min-height: 90vh
     background-color: #255
     // @include m.mobile
     //     background-color: #255
