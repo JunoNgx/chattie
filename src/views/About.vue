@@ -21,12 +21,6 @@
 .about
     // border: 1px solid red
 
-    hyphens: auto
-    -moz-hyphens: auto
-    -webkit-hyphens: auto
-    -ms-hyphens: auto
-    -o-hyphens: auto
-
     margin: auto
     padding: 1rem
     width: 70%
