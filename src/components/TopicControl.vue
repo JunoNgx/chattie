@@ -1,21 +1,28 @@
 <script lang="ts">
     import { defineComponent } from 'vue'
+    // import type Topic from "../models/Topic"
 
     export default defineComponent({
         name: "topic-control",
         data() {
             return {
+                // topicData: [] as Topic[],
+                // enabledTopics: [] as number[],
                 isExpanded: false as boolean
             }
         },
-        props: {
-            topicData: Array,
-            enabledTopics: Array
-        },
-        created() {
-            // console.log(this.topicData);
-            // console.log(this.enabledTopics);
-        },
+        // props: {
+        //     topicData: Array,
+        //     enabledTopics: Array
+        // },
+        // mounted() {
+        //     // this.topicData = this.$store.getters.getTopicData
+        //     // this.enabledTopics = this.$store.getters.getEnabledTopics
+
+        //     // console.log(this.enabledTopics)
+        //     // console.log(this.topicData);
+        //     // console.log(this.enabledTopics);
+        // },
         methods: {
             toggleExpand() {
                 this.isExpanded = !this.isExpanded
@@ -28,7 +35,8 @@
                 // } else {
                 //     this.enabledTopics?.splice(index, 1)
                 // }
-                this.$emit("update-topic-status", topicId)
+                // this.$emit("update-topic-status", topicId)
+                this.$store.commit("updateTopicStatus", topicId)
             }
         }
     })
@@ -53,10 +61,10 @@
         <div class="topic-settings__topic-wrapper">
             <p
                 class="topic-settings__topic-wrapper__item"
-                v-for="topic in topicData" :key="topic.name"
+                v-for="topic in this.$store.state.topicData" :key="topic.name"
                 :class="{
                     'topic-settings__topic-wrapper__item--is-enabled'
-                        :enabledTopics.includes(topic.id)
+                        :this.$store.state.enabledTopics.includes(topic.id)
                 }"
                 @click="updateTopicStatus(topic.id)"
             >
