@@ -15,7 +15,11 @@
 
 <template>
     <modal-base :close="close">
-        <p>Chattie is a web application made by Juno Nguyen.</p>
+        <div class="about-content">
+            <p>
+                Chattie is a web application made by Juno Nguyen.
+            </p>
+        </div>
     </modal-base>
 </template>
 
