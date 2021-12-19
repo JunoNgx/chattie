@@ -8,6 +8,8 @@
 
         <p>This project is <a href="https://github.com/JunoNgx/Chattie" rel="noopener noreferrer" target="_blank">open-sourced</a> and welcomes contributions.</p>
 
+        <p>Launch screen vector art created by biggorilla298, courtesy of <a href="https://www.vecteezy.com/vector-art/223587-people-talking-vector" rel="noopener noreferrer" target="_blank">Vecteezy.com</a></p>
+
     </div>
 </template>
 
