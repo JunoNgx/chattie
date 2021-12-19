@@ -65,7 +65,7 @@
     // border: 1px solid red
     margin: auto
     padding: 1rem
-    width: 80%
+    width: 50%
     height: 50%
     font-size: 1.25rem
     +m.mobile
@@ -88,6 +88,7 @@
             width: fit-content
             font-family: v.$font-stack
             font-size: 1.25rem
+            margin: 1rem
             padding: 0.75rem
             color: v.$text-light
             float: right
