@@ -9,6 +9,7 @@
     import NoTopicError from "./components/NoTopicError.vue"
     import Footer from "./components/Footer.vue"
 
+    import SettingsDialog from "./components/SettingsDialog.vue"
     import AboutDialog from "./components/AboutDialog.vue"
 
     // let promptStr = "Let's get you something to talk about";
@@ -23,6 +24,7 @@
             NoTopicError,
             Footer,
 
+            SettingsDialog,
             AboutDialog
         },
         data() {
@@ -32,7 +34,8 @@
                 enabledTopics: [] as number[],
                 hasNoTopicEnabled: false as boolean,
                 isShowingAboutDialog: false as boolean,
-                isShowingSettingsDialog: false as boolean
+                isShowingSettingsDialog: false as boolean,
+                isDarkMode: false as boolean
             }
         },
         mounted: function() {
@@ -78,6 +81,10 @@
                 localStorage.setItem('enabledTopics', JSON.stringify(this.enabledTopics))
                 // console.log(this.enabledTopics)
             },
+            updateDarkMode(darkModeValue: boolean) {
+                this.isDarkMode = darkModeValue
+                // console.log(this.isDarkMode)
+            },
             resetTopicsToDefault() {
                 this.enabledTopics = []
                 topicData.forEach(topic => {
@@ -86,18 +93,18 @@
             },
 
             // UI and navigational methods
+            showSettingsDialog() {
+                this.isShowingSettingsDialog = true
+            },
+            closeSettingsDialog() {
+                this.isShowingSettingsDialog = false
+            },
             showAboutDialog() {
                 this.isShowingAboutDialog = true
             },
             closeAboutDialog() {
                 this.isShowingAboutDialog = false
             },
-            showSettingsDialog() {
-                this.isShowingSettingsDialog = true
-            },
-            closeSettingsDialog() {
-                this.isShowingSettingsDialog = false
-            }
         }
     })
 </script>
@@ -121,7 +128,17 @@
     />
     <Footer />
 
-    <AboutDialog v-show=isShowingAboutDialog :close=closeAboutDialog />
+    <SettingsDialog
+        v-show=isShowingSettingsDialog
+        :darkModeValue=isDarkMode
+        :updateDarkMode=updateDarkMode
+        :resetDefault=resetTopicsToDefault
+        :close=closeSettingsDialog
+    />
+    <AboutDialog
+        v-show=isShowingAboutDialog
+        :close=closeAboutDialog
+    />
 </template>
 
 <style lang="sass">
