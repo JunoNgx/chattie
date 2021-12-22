@@ -97,10 +97,6 @@
         text-align: center
         height: 2rem
         margin-bottom: 1rem
-        // border-bottom: 2px solid v.$bg-light
-        // +m.transition(border-bottom)
-        // &:hover
-        //     border-bottom: 2px solid v.$acc-aquamarine
 
         &__text
             font-size: 1.5rem
@@ -155,7 +151,5 @@
                 border: 2px solid v.$acc-magenta
                 &.topic-settings__topic-wrapper__item--is-enabled
                     background-color: v.$acc-magenta
-
-                
 
 </style>
