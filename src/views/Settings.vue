@@ -1,16 +1,23 @@
 <script lang="ts">
     import { defineComponent } from 'vue'
+    import AccentColour from "../models/AccentColour"
 
     export default defineComponent ({
         name: "SettingsDialog",
         data() {
             return {
-                localDarkModeValue: this.$store.state.isDarkMode as boolean
+                localDarkModeValue: this.$store.state.isDarkMode as boolean,
+                localAccentColour: this.$store.state.accentColour as AccentColour,
+                AccentColour
             }
         },
         methods: {
             updateDarkMode() {
                 this.$store.commit("setIsDarkMode", this.localDarkModeValue)
+            },
+            updateAccentColour() {
+                this.$store.commit("setAccentColour", this.localAccentColour)
+                console.log("setting accent colour", this.localAccentColour)
             },
             resetDefaultHandler() {
                 if (confirm("This will reset your topic settings to default") === true) {
@@ -25,13 +32,26 @@
     <div class="settings">
         <div class="settings__items">
             <div class="settings__items__item">
+                <label for="dark-mode-checkbox">Dark Mode</label>
                 <input
                     type="checkbox"
                     id="dark-mode-checkbox"
                     v-model=localDarkModeValue
                     @change="updateDarkMode(this.localDarkModeValue)"
                 >
-                <label for="dark-mode-checkbox">Dark Mode</label>
+            </div>
+            <div
+                class="settings__items__item"
+            >
+                <label for="accent-colour">Accent Colour</label>
+                <select
+                    id="accent-colour"
+                    v-model=localAccentColour
+                    @change="updateAccentColour"
+                >
+                    <option :value=AccentColour.MAGENTA>Magenta</option>
+                    <option :value=AccentColour.AQUAMARINE>Aquamarine</option>
+                </select>
             </div>
         </div>
         <div class="settings__buttons">

@@ -2,7 +2,7 @@
     import { defineComponent } from "vue"
     import Header from "./components/Header.vue"
     import Footer from "./components/Footer.vue"
-    import topicData from "./data/topics.json"
+    import topicData from "./data/topics.json" 
 
     export default defineComponent ({
         name: "App",
@@ -21,6 +21,20 @@
                 )
             } else {
                 this.$store.commit('resetDefault')
+            }
+
+            if (localStorage.getItem('isDarkMode')) {
+                this.$store.commit(
+                    "setIsDarkMode",
+                    JSON.parse(localStorage.getItem("isDarkMode")!)
+                )
+            }
+
+            if (localStorage.getItem('accentColour')) {
+                this.$store.commit(
+                    "setAccentColour",
+                    JSON.parse(localStorage.getItem("accentColour")!)
+                )
             }
         },
     })
