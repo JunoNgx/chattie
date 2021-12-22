@@ -223,7 +223,7 @@
     {
         "id": 15,
         "name": "tech",
-        "isEnabledByDefault": false,
+        "isEnabledByDefault": true,
         "prompts": [
             "iOS vs Android",
             "Internet privacy",
