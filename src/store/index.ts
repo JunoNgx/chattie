@@ -36,7 +36,7 @@ export default createStore({
         },
         addNewGeneratedTopic (state, newData: string) {
             state.lastTopics = [...state.lastTopics, newData]
-            if (state.lastTopics.length > 7) state.lastTopics.shift()
+            if (state.lastTopics.length > 5) state.lastTopics.shift()
         },
         updateTopicStatus (state, topicId: number) {
             const index = state.enabledTopics.indexOf(topicId)

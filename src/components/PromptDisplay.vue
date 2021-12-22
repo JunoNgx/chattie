@@ -29,22 +29,24 @@
                     this.hasNoTopicEnabled = false
                 }
 
-                let topicIndex = Math.floor(Math.random() * topicData.length)
-                while (!enabledTopics.includes(topicIndex)) {
-                    topicIndex = Math.floor(Math.random() * topicData.length)
-                }
+                const randomisedIndexInArray = Math.floor(Math.random() * enabledTopics.length)
+                const randomisedTopicId = enabledTopics[randomisedIndexInArray]
+                const chosenTopic = topicData.find(t => t.id === randomisedTopicId)!
 
-                let promptIndex = Math.floor(Math.random() * topicData[topicIndex].prompts.length)
-                while (this.$store.state.lastTopics.includes(topicData[topicIndex].prompts[promptIndex])) {
-                    promptIndex = Math.floor(Math.random() * topicData[topicIndex].prompts.length)
+                // NOTE: the minimum amount of prompts in a topic must be higher than the
+                // amount of topics being tracked (to avoid repetition, see vueX method
+                // addNewGeneratedTopic()), else, infinite loop will occur
+                let promptIndex = Math.floor(Math.random() * chosenTopic.prompts.length)
+                while (this.$store.state.lastTopics.includes(chosenTopic.prompts[promptIndex])) {
+                    promptIndex = Math.floor(Math.random() * chosenTopic.prompts.length)
                 }
 
                 this.isShowing = false
+                this.$store.commit("addNewGeneratedTopic", chosenTopic.prompts[promptIndex])
                 setTimeout(() => {
                     this.isShowing = true
-                    this.promptStr = topicData[topicIndex].prompts[promptIndex]
+                    this.promptStr = chosenTopic.prompts[promptIndex]
                 }, 800)
-                this.$store.commit("addNewGeneratedTopic", this.promptStr)
             },
         },
     })
