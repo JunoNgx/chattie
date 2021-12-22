@@ -63,8 +63,8 @@
                         v-model=localAccentColour
                         @change="updateAccentColour"
                     >
-                        <option :value=AccentColour.MAGENTA>Magenta</option>
                         <option :value=AccentColour.AQUAMARINE>Aquamarine</option>
+                        <option :value=AccentColour.MAGENTA>Magenta</option>
                     </select>
                 </div>
             </div>

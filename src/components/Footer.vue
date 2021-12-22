@@ -1,9 +1,21 @@
+<script lang="ts">
+    import { defineComponent } from 'vue'
+    import CA from './CustomAnchor.vue'
+
+    export default defineComponent ({
+        name: "Footer",
+        components: {
+            CA
+        }
+    })
+</script>
+
 <template>
     <div 
         class="footer"
         :class="{'footer--dark':this.$store.state.isDarkMode}"
     >
-        <p>made by <a href="https://junongx.com/" rel="noopener noreferrer" target="_blank">Juno Nguyen</a> with curiosity</p>
+        <p>made by <CA link="https://junongx.com/">Juno Nguyen</CA> with curiosity</p>
     </div>
 </template>
 
