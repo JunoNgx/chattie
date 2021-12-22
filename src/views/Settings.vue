@@ -17,7 +17,6 @@
             },
             updateAccentColour() {
                 this.$store.commit("setAccentColour", this.localAccentColour)
-                console.log("setting accent colour", this.localAccentColour)
             },
             resetDefaultHandler() {
                 if (confirm("This will reset your topic settings to default") === true) {
