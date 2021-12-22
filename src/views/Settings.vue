@@ -103,6 +103,6 @@
             +m.transition(color, background-color, width, height)
 
             &:hover
-                background-color: v.$acc-green
+                background-color: v.$acc-aquamarine
                 color: v.$bg-light
 </style>

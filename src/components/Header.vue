@@ -1,12 +1,18 @@
 <script lang="ts">
     import { defineComponent } from 'vue'
+    import AccentColour from '../models/AccentColour'
     import Logo from "./Logo.vue"
 
     export default defineComponent ({
         name: "Header",
+        data() {
+            return {
+                AccentColour
+            }
+        },
         props: {
             showAboutDialog: Function,
-            showSettingsDialog: Function
+            showSettingsDialog: Function,
         },
         components: {
             Logo
@@ -25,17 +31,32 @@
         <div class="header__navbar">
             <router-link
                 class="header__navbar__item" to="/talk"
-                :class="{'header__navbar__item--dark':this.$store.state.isDarkMode}">
+                :class="{
+                    'header__navbar__item--dark':this.$store.state.isDarkMode,
+                    'header__navbar__item--accent-aquamarine':this.$store.state.accentColour===AccentColour.AQUAMARINE,
+                    'header__navbar__item--accent-magenta':this.$store.state.accentColour===AccentColour.MAGENTA
+                }"
+            >
                 Let's talk
             </router-link>
             <router-link 
                 class="header__navbar__item" to="/settings"
-                :class="{'header__navbar__item--dark':this.$store.state.isDarkMode}">
+                :class="{
+                    'header__navbar__item--dark':this.$store.state.isDarkMode,
+                    'header__navbar__item--accent-aquamarine':this.$store.state.accentColour===AccentColour.AQUAMARINE,
+                    'header__navbar__item--accent-magenta':this.$store.state.accentColour===AccentColour.MAGENTA
+                }"
+            >
                 Settings
             </router-link>
             <router-link 
                 class="header__navbar__item" to="/about"
-                :class="{'header__navbar__item--dark':this.$store.state.isDarkMode}">
+                :class="{
+                    'header__navbar__item--dark':this.$store.state.isDarkMode,
+                    'header__navbar__item--accent-aquamarine':this.$store.state.accentColour===AccentColour.AQUAMARINE,
+                    'header__navbar__item--accent-magenta':this.$store.state.accentColour===AccentColour.MAGENTA
+                }"
+            >
                 About
             </router-link>
         </div>
@@ -76,8 +97,10 @@
             +m.regular-text-col
             +m.transition(background-color)
 
-            &:hover
-                background-color: v.$acc-green
+            &--accent-aquamarine:hover
+                    background-color: v.$acc-aquamarine
+            &--accent-magenta:hover
+                    background-color: v.$acc-magenta
 
     +m.mobile
         display: block

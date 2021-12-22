@@ -90,7 +90,7 @@
         // border-bottom: 2px solid v.$bg-light
         // +m.transition(border-bottom)
         // &:hover
-        //     border-bottom: 2px solid v.$acc-green
+        //     border-bottom: 2px solid v.$acc-aquamarine
 
         &__text
             font-size: 1.5rem
@@ -100,8 +100,8 @@
             width: 1rem
             height: 1rem
             right: 0%
-            border-right: 5px solid v.$acc-green
-            border-bottom: 5px solid v.$acc-green
+            border-right: 5px solid v.$acc-aquamarine
+            border-bottom: 5px solid v.$acc-aquamarine
             transform: rotate(45deg)
             transform-origin: 100% 100%
             margin-left: 1rem
@@ -126,7 +126,7 @@
         &__item
             margin: 0
             padding: 0.5rem
-            border: 2px solid v.$acc-green
+            border: 2px solid v.$acc-aquamarine
             border-radius: 1rem
             cursor: pointer
             user-select: none
@@ -135,6 +135,6 @@
 
             &--is-enabled
                 // color: black
-                background-color: v.$acc-green
+                background-color: v.$acc-aquamarine
 
 </style>

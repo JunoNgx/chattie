@@ -15,7 +15,7 @@
     width: min-content
     padding: 0.5rem 1.5rem
     font-size: 1.7rem
-    background: linear-gradient(90deg, v.$acc-green 50%, v.$acc-magenta 50%)
+    background: linear-gradient(90deg, v.$acc-aquamarine 50%, v.$acc-magenta 50%)
     color: #fff
     cursor: pointer
     user-select: none

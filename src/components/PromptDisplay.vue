@@ -1,6 +1,7 @@
 <script lang="ts">
     import { defineComponent } from 'vue';
     import type Topic from "../models/Topic"
+    import AccentColour from '../models/AccentColour'
     import NoTopicError from "../components/NoTopicError.vue"
 
     export default defineComponent({
@@ -10,6 +11,7 @@
                 promptStr: "Let's get you something to talk about" as string,
                 isShowing: true as boolean,
                 hasNoTopicEnabled: false as boolean,
+                AccentColour
             }
         },
         components: {
@@ -62,7 +64,11 @@
         </div>
         <button
             class="prompt-display__button"
-            :class="{'prompt-display__button--dark':this.$store.state.isDarkMode}"
+            :class="{
+                'prompt-display__button--dark':this.$store.state.isDarkMode,
+                'prompt-display__button--accent-aquamarine':this.$store.state.accentColour===AccentColour.AQUAMARINE,
+                'prompt-display__button--accent-magenta':this.$store.state.accentColour===AccentColour.MAGENTA
+            }"
             @click="getNewPrompt"
         >
             <span class="prompt-display__button__label">
@@ -98,24 +104,27 @@
             margin-bottom: 4rem
     
     &__button
-        border: 2px solid v.$acc-green
         cursor: pointer
         width: fit-content
         font-family: v.$font-stack
         font-size: 1.5rem
         padding: 1rem 2rem
-        background-color: v.$bg-light
-        color: v.$acc-green
         +m.transition(color, background-color)
 
-        &:hover
-            background-color: v.$acc-green
-            color: v.$bg-light
+        &--accent-aquamarine
+            border: 2px solid v.$acc-aquamarine
+            color: v.$acc-aquamarine
+            &:hover
+                background-color: v.$acc-aquamarine
+        &--accent-magenta
+            border: 2px solid v.$acc-magenta
+            color: v.$acc-magenta
+            &:hover
+                background-color: v.$acc-magenta
 
         &--dark
             background-color: v.$bg-dark
             &:hover
-                background-color: v.$acc-green
                 color: v.$bg-dark
 
     +m.mobile

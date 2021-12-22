@@ -68,7 +68,7 @@
     display: flex
     flex-direction: column
     justify-content: space-between
-    accent-color: v.$acc-green
+    accent-color: v.$acc-aquamarine
 
     +m.mobile
         max-width: 100%
