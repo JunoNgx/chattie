@@ -32,26 +32,34 @@
     <div class="settings">
         <div class="settings__items">
             <div class="settings__items__item">
-                <label for="dark-mode-checkbox">Dark Mode</label>
-                <input
-                    type="checkbox"
-                    id="dark-mode-checkbox"
-                    v-model=localDarkModeValue
-                    @change="updateDarkMode(this.localDarkModeValue)"
-                >
+                <div class="settings__items__item__label">
+                    <label for="dark-mode-checkbox">Dark Mode</label>
+                </div>
+                <div class="settings__items__item__options">
+                    <input
+                        type="checkbox"
+                        id="dark-mode-checkbox"
+                        v-model=localDarkModeValue
+                        @change="updateDarkMode(this.localDarkModeValue)"
+                    >
+                </div>
             </div>
             <div
                 class="settings__items__item"
-            >
-                <label for="accent-colour">Accent Colour</label>
-                <select
-                    id="accent-colour"
-                    v-model=localAccentColour
-                    @change="updateAccentColour"
-                >
-                    <option :value=AccentColour.MAGENTA>Magenta</option>
-                    <option :value=AccentColour.AQUAMARINE>Aquamarine</option>
-                </select>
+            >   
+                <div class="settings__items__item__label">
+                    <label for="accent-colour">Accent Colour</label>
+                </div>
+                <div class="settings__items__item__options">
+                    <select
+                        id="accent-colour"
+                        v-model=localAccentColour
+                        @change="updateAccentColour"
+                    >
+                        <option :value=AccentColour.MAGENTA>Magenta</option>
+                        <option :value=AccentColour.AQUAMARINE>Aquamarine</option>
+                    </select>
+                </div>
             </div>
         </div>
         <div class="settings__buttons">
@@ -84,6 +92,9 @@
 
         &__item
             margin: 0.5rem
+            display: grid
+            grid-column-gap: 2rem
+            grid-template-columns: 1fr 1fr
     
     &__buttons
 
