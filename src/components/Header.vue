@@ -15,14 +15,29 @@
 </script>
 
 <template>
-    <div class="header">
+    <div 
+        class="header"
+        :class="{'header--dark':this.$store.state.isDarkMode}"
+    >
         <div class="header__branding">
             <Logo/>
         </div>
         <div class="header__navbar">
-            <router-link class="header__navbar__item" to="/home">Home</router-link>
-            <router-link class="header__navbar__item" to="/settings">Settings</router-link>
-            <router-link class="header__navbar__item" to="/about">About</router-link>
+            <router-link
+                class="header__navbar__item" to="/home"
+                :class="{'header__navbar__item--dark':this.$store.state.isDarkMode}">
+                Home
+            </router-link>
+            <router-link 
+                class="header__navbar__item" to="/settings"
+                :class="{'header__navbar__item--dark':this.$store.state.isDarkMode}">
+                Settings
+            </router-link>
+            <router-link 
+                class="header__navbar__item" to="/about"
+                :class="{'header__navbar__item--dark':this.$store.state.isDarkMode}">
+                About
+            </router-link>
         </div>
     </div>
 </template>
@@ -37,7 +52,11 @@
     display: flex
     align-items: center
     justify-content: space-between
+
     border-bottom: 1px solid v.$text-light
+    +m.transition(border-bottom)
+    &--dark
+        border-bottom: 1px solid v.$text-dark
 
     &__branding
         margin: 0.25rem
@@ -67,6 +86,10 @@ a.header__navbar__item
     color: v.$text-light
     &:visited
         color: v.$text-light
+    &--dark
+        color: v.$text-dark
+        &:visited
+            color: v.$text-dark
 
 a.router-link-active
     text-decoration: underline
