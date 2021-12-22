@@ -16,7 +16,7 @@
 
         <p>This website is also a <strong>Progressive Web App</strong>, meaning it can be launched directly from the home screen of your smartphone, and function as a native app. For more information, check out the <CA link="https://developer.mozilla.org/en-US/docs/MDN/About">Mozilla Developer Network's article</CA>.</p>
 
-        <p>Of course, the heart of the application is the archive of prompts, sorted by topics. This is a work-in-progress and new topics are expectedly added over time. If you would like to contribute, please send an email to <CA link="juno.ngx@gmail.com">juno.ngx@gmail.com</CA>, <CA link="https://twitter.com/JunoNgx">tweet me</CA>, or even better yet, if you are the techie type of person, create a pull request at the project's repository.</p>
+        <p>Of course, the heart of the application is the archive of prompts, sorted by topics. This is a work-in-progress and new topics are expectedly added over time. If you would like to contribute, please send an email to <CA link="mailto:juno.ngx@gmail.com">juno.ngx@gmail.com</CA>, <CA link="https://twitter.com/JunoNgx">tweet me</CA>, or even better yet, if you are the techie type of person, create a pull request at the project's repository.</p>
 
         <p>This project is <CA link="https://github.com/JunoNgx/Chattie">open-source</CA> and welcomes contributions.</p>
 

@@ -24,7 +24,7 @@
             'custom-anchor--accent-magenta'
                 :this.$store.state.accentColour===AccentColour.MAGENTA
         }"
-        href=link
+        :href=link
         rel="noopener noreferrer"
         target="_blank"
     >
