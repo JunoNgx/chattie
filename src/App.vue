@@ -68,6 +68,7 @@
     display: flex
     flex-direction: column
     justify-content: space-between
+    overflow: hidden
 
     +m.mobile
         max-width: 100%
