@@ -8,6 +8,7 @@ export default createStore({
         enabledTopics: [] as number[],
         promptStr: "Let's get you something to talk about" as string,
         isDarkMode: false as boolean,
+        lastTopics: [] as string[],
         accentColour: AccentColour.AQUAMARINE as AccentColour
     },
     mutations: {
@@ -30,8 +31,12 @@ export default createStore({
         },
         setAccentColour (state, newData: AccentColour) {
             state.accentColour = newData
-
+            
             localStorage.setItem('accentColour', JSON.stringify(state.accentColour))
+        },
+        addNewGeneratedTopic (state, newData: string) {
+            state.lastTopics = [...state.lastTopics, newData]
+            if (state.lastTopics.length > 7) state.lastTopics.shift()
         },
         updateTopicStatus (state, topicId: number) {
             const index = state.enabledTopics.indexOf(topicId)

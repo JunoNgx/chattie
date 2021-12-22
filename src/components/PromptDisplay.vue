@@ -35,7 +35,7 @@
                 }
 
                 let promptIndex = Math.floor(Math.random() * topicData[topicIndex].prompts.length)
-                while (this.promptStr === topicData[topicIndex].prompts[promptIndex]) {
+                while (this.$store.state.lastTopics.includes(topicData[topicIndex].prompts[promptIndex])) {
                     promptIndex = Math.floor(Math.random() * topicData[topicIndex].prompts.length)
                 }
 
@@ -44,7 +44,7 @@
                     this.isShowing = true
                     this.promptStr = topicData[topicIndex].prompts[promptIndex]
                 }, 800)
-
+                this.$store.commit("addNewGeneratedTopic", this.promptStr)
             },
         },
     })
