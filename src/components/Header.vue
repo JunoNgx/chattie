@@ -90,7 +90,8 @@
             font-size: 1.25rem
             cursor: pointer
             padding: 0.5rem
-            +m.regular-text-col
+            
+            color: v.$text-light
             +m.transition(background-color)
 
             &--accent-aquamarine:hover
