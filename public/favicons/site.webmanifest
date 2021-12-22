@@ -1,6 +1,10 @@
 {
-    "name": "",
-    "short_name": "",
+    "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+    "name": "Chattie: A conversation prompt generator",
+    "short_name": "Chattie",
+    "description": "A social and conversational tool that helps generate prompts by topics",
+    "categories": ["social", "dating"],
+    "display": "standalone",
     "icons": [
         {
             "src": "/favicons/android-chrome-192x192.png",
@@ -11,9 +15,18 @@
             "src": "/favicons/android-chrome-512x512.png",
             "sizes": "512x512",
             "type": "image/png"
+        },
+        {
+            "src": "/favicons/logo.png",
+            "sizes": "1024x1024",
+            "type": "image/png",
+            "purpose": "any maskable"
         }
     ],
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
-    "display": "standalone"
+    "lang": "en-US",
+    "orientation": "portrait-primary",
+    "theme_color": "#ff0066",
+    "background_color": "#222",
+    "start_url": "https://letschattie.com/talk",
+    "prefer_related_applications": false
 }
