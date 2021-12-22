@@ -18,7 +18,7 @@
 
         <p>Of course, the heart of the application is the archive of prompts, sorted by topics. This is a work-in-progress and new topics are expectedly added over time. If you would like to contribute, please send an email to <CA link="juno.ngx@gmail.com">juno.ngx@gmail.com</CA>, <CA link="https://twitter.com/JunoNgx">tweet me</CA>, or even better yet, if you are the techie type of person, create a pull request at the project's repository.</p>
 
-        <p>This project is <CA link="https://github.com/JunoNgx/Chattie">open-sourced</CA> and welcomes contributions.</p>
+        <p>This project is <CA link="https://github.com/JunoNgx/Chattie">open-source</CA> and welcomes contributions.</p>
 
         <p>Launch screen vector art created by biggorilla298, courtesy of <CA link="https://www.vecteezy.com/vector-art/223587-people-talking-vector">Vecteezy.com</CA></p>
 
