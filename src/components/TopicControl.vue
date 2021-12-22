@@ -1,11 +1,13 @@
 <script lang="ts">
     import { defineComponent } from 'vue'
+    import AccentColour from '../models/AccentColour'
 
     export default defineComponent({
         name: "topic-control",
         data() {
             return {
-                isExpanded: false as boolean
+                isExpanded: false as boolean,
+                AccentColour
             }
         },
         methods: {
@@ -33,7 +35,11 @@
             <span class="topic-settings__expand-button__text">Topic settings</span>
             <div 
                 class="topic-settings__expand-button__icon"
-                :class="{'topic-settings__expand-button__icon--is-expanded':isExpanded}"
+                :class="{
+                    'topic-settings__expand-button__icon--is-expanded':isExpanded,
+                    'topic-settings__expand-button__icon--accent-aquamarine':this.$store.state.accentColour===AccentColour.AQUAMARINE,
+                    'topic-settings__expand-button__icon--accent-magenta':this.$store.state.accentColour===AccentColour.MAGENTA
+                }"
             ></div>
         </div>
 
@@ -49,7 +55,11 @@
                     'topic-settings__topic-wrapper__item--is-enabled'
                         :this.$store.state.enabledTopics.includes(topic.id),
                     'topic-settings__topic-wrapper__item--dark'
-                        :this.$store.state.isDarkMode
+                        :this.$store.state.isDarkMode,
+                    'topic-settings__topic-wrapper__item--accent-aquamarine'
+                        :this.$store.state.accentColour===AccentColour.AQUAMARINE,
+                    'topic-settings__topic-wrapper__item--accent-magenta'
+                        :this.$store.state.accentColour===AccentColour.MAGENTA
                 }"
                 @click="updateTopicStatus(topic.id)"
             >
@@ -100,13 +110,18 @@
             width: 1rem
             height: 1rem
             right: 0%
-            border-right: 5px solid v.$acc-aquamarine
-            border-bottom: 5px solid v.$acc-aquamarine
             transform: rotate(45deg)
             transform-origin: 100% 100%
             margin-left: 1rem
-            +m.transition(transform-origin, transform)
 
+            &--accent-aquamarine
+                border-right: 5px solid v.$acc-aquamarine
+                border-bottom: 5px solid v.$acc-aquamarine
+            &--accent-magenta
+                border-right: 5px solid v.$acc-magenta
+                border-bottom: 5px solid v.$acc-magenta
+
+            +m.transition(transform-origin, transform)
             &--is-expanded
                 transform-origin: 65% 65%
                 transform: rotate(225deg)
@@ -126,15 +141,21 @@
         &__item
             margin: 0
             padding: 0.5rem
-            border: 2px solid v.$acc-aquamarine
             border-radius: 1rem
             cursor: pointer
             user-select: none
-            // +m.regular-text-col
             +m.transition(background-color)
 
-            &--is-enabled
-                // color: black
-                background-color: v.$acc-aquamarine
+            &--accent-aquamarine
+                border: 2px solid v.$acc-aquamarine
+                &.topic-settings__topic-wrapper__item--is-enabled
+                    background-color: v.$acc-aquamarine
+                    
+            &--accent-magenta
+                border: 2px solid v.$acc-magenta
+                &.topic-settings__topic-wrapper__item--is-enabled
+                    background-color: v.$acc-magenta
+
+                
 
 </style>
