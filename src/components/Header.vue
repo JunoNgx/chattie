@@ -24,9 +24,9 @@
         </div>
         <div class="header__navbar">
             <router-link
-                class="header__navbar__item" to="/home"
+                class="header__navbar__item" to="/talk"
                 :class="{'header__navbar__item--dark':this.$store.state.isDarkMode}">
-                Home
+                Let's talk
             </router-link>
             <router-link 
                 class="header__navbar__item" to="/settings"

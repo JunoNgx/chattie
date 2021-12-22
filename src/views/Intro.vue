@@ -27,7 +27,7 @@
                 <h3>You've come to the right place</h3>
             </div>
             <div class="intro__button-wrapper">
-                <router-link to="/home">
+                <router-link to="/talk">
                     <button>Let's get you started</button>
                 </router-link>
             </div>
