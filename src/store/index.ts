@@ -21,6 +21,12 @@ export default createStore({
             state.isDarkMode = newData
 
             localStorage.setItem('isDarkMode', JSON.stringify(state.isDarkMode))
+
+            if (newData === true) {
+                document.body.classList.add('dark')
+            } else {
+                document.body.classList.remove('dark')
+            }
         },
         setAccentColour (state, newData: AccentColour) {
             state.accentColour = newData

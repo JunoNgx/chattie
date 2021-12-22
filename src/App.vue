@@ -28,6 +28,7 @@
                     "setIsDarkMode",
                     JSON.parse(localStorage.getItem("isDarkMode")!)
                 )
+                // document.body.classList.add('dark')
             }
 
             if (localStorage.getItem('accentColour')) {
@@ -54,8 +55,22 @@
 <style lang="sass">
 
 @use "./styles/mixins" as m
+@use "./styles/vars" as v
 @use "./styles/universal"
 @import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,700;1,300&display=swap')
+
+#app
+    margin: 1rem auto
+    max-width: 768px
+    min-height: 85vh
+    width: 100%
+    height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+    +m.mobile
+        max-width: 100%
 
 .v-enter-from
     transform: translateX(-100%)

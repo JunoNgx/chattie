@@ -1,28 +1,18 @@
 @use "./mixins" as m
 @use "./vars" as v
-    
-#app
-    
-    // border: 1px solid v.$text-light
-    margin: 0rem auto
-    max-width: 768px
-    min-height: 85vh
-    // color: v.$text-light
 
-    display: flex
-    flex-direction: column
-    justify-content: space-between
-
-    +m.regular-text-col
-    +m.mobile
-        max-width: 100%
-    
 body
     -webkit-font-smoothing: antialiased
     -moz-osx-font-smoothing: grayscale
     font-family: v.$font-stack
-    background-color: v.$bg-light
     font-weight: 400
+
+    background-color: v.$bg-light
+    color: v.$text-light
+    +m.transition(background-color, color)
+    &.dark
+        background-color: v.$bg-dark
+        color: v.$text-dark
 
 button
     border: 1px solid v.$text-light
@@ -43,7 +33,7 @@ button
 a
     color: v.$acc-green
     &:visited
-            color: v.$acc-green
+        color: v.$acc-green
 
 p
     hyphens: auto
