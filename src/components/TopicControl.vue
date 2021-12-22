@@ -22,7 +22,10 @@
 <template>
     <div
         class="topic-settings"
-        :class="{'topic-settings--is-expanded':isExpanded}"
+        :class="{
+            'topic-settings--is-expanded':isExpanded,
+            'topic-settings--dark':this.$store.state.isDarkMode
+        }"
     >
 
         <!-- The expand button -->
@@ -44,7 +47,9 @@
                 v-for="topic in this.$store.state.topicData" :key="topic.name"
                 :class="{
                     'topic-settings__topic-wrapper__item--is-enabled'
-                        :this.$store.state.enabledTopics.includes(topic.id)
+                        :this.$store.state.enabledTopics.includes(topic.id),
+                    'topic-settings__topic-wrapper__item--dark'
+                        :this.$store.state.isDarkMode
                 }"
                 @click="updateTopicStatus(topic.id)"
             >
@@ -60,7 +65,6 @@
 @use "../styles/vars" as v
 
 .topic-settings
-    border: 1px solid v.$text-light
     margin: 2rem auto
     padding: 0.5rem
     overflow: hidden
@@ -69,7 +73,11 @@
     +m.transition(max-height)
     +m.mobile
         max-width: 90%
-    
+
+    border: 1px solid v.$text-light
+    &--dark
+        border: 1px solid v.$text-dark
+
     &--is-expanded
         // Might need to be changed with new topics added
         max-height: 50vh
@@ -79,10 +87,10 @@
         text-align: center
         height: 2rem
         margin-bottom: 1rem
-        border-bottom: 2px solid v.$bg-light
-        +m.transition(border-bottom)
-        &:hover
-            border-bottom: 2px solid v.$acc-green
+        // border-bottom: 2px solid v.$bg-light
+        // +m.transition(border-bottom)
+        // &:hover
+        //     border-bottom: 2px solid v.$acc-green
 
         &__text
             font-size: 1.5rem
@@ -117,16 +125,16 @@
 
         &__item
             margin: 0
-            padding: 0.4rem
+            padding: 0.5rem
             border: 2px solid v.$acc-green
-            // border-radius: 25px
+            border-radius: 1rem
             cursor: pointer
             user-select: none
-            +m.regular-text-col
+            // +m.regular-text-col
             +m.transition(background-color)
 
             &--is-enabled
-                color: black
+                // color: black
                 background-color: v.$acc-green
 
 </style>

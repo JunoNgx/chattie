@@ -41,7 +41,7 @@
                 setTimeout(() => {
                     this.isShowing = true
                     this.promptStr = topicData[topicIndex].prompts[promptIndex]
-                }, 600)
+                }, 800)
 
             },
         },
@@ -62,6 +62,7 @@
         </div>
         <button
             class="prompt-display__button"
+            :class="{'prompt-display__button--dark':this.$store.state.isDarkMode}"
             @click="getNewPrompt"
         >
             <span class="prompt-display__button__label">
@@ -98,18 +99,24 @@
     
     &__button
         border: 2px solid v.$acc-green
-        background-color: v.$bg-light
         cursor: pointer
         width: fit-content
         font-family: v.$font-stack
         font-size: 1.5rem
         padding: 1rem 2rem
+        background-color: v.$bg-light
         color: v.$acc-green
-        +m.transition(color, background-color, width, height)
+        +m.transition(color, background-color)
 
         &:hover
             background-color: v.$acc-green
             color: v.$bg-light
+
+        &--dark
+            background-color: v.$bg-dark
+            &:hover
+                background-color: v.$acc-green
+                color: v.$bg-dark
 
     +m.mobile
         width: 90%
