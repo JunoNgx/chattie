@@ -10,10 +10,6 @@
                 AccentColour
             }
         },
-        props: {
-            showAboutDialog: Function,
-            showSettingsDialog: Function,
-        },
         components: {
             Logo
         }
