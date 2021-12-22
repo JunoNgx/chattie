@@ -15,20 +15,31 @@ body
         color: v.$text-dark
 
 button
-    border: 1px solid v.$text-light
-    background-color: v.$bg-light
+    border: 2px solid v.$text-light
     cursor: pointer
     width: fit-content
     font-family: v.$font-stack
     font-size: 1.25rem
     margin: 1rem
     padding: 0.75rem
-    color: v.$text-light
-    +m.transition(color, background-color, width, height)
+    +m.transition(color, background-color)
 
+    color: v.$text-light
+    background-color: v.$bg-light
     &:hover
-        background-color: v.$acc-aquamarine
         color: v.$bg-light
+
+    &.button--dark
+        color: v.$text-dark
+        background-color: v.$bg-dark
+        &:hover
+            color: v.$bg-dark
+        
+    &.button--accent
+        &-aquamarine:hover
+            background-color: v.$acc-aquamarine
+        &-magenta:hover
+            background-color: v.$acc-magenta
 
 p
     hyphens: auto

@@ -71,6 +71,11 @@
         <div class="settings__buttons">
             <button
                 class="settings__buttons__button"
+                :class="{
+                    'button--dark':this.$store.state.isDarkMode,
+                    'button--accent-aquamarine':this.$store.state.accentColour===AccentColour.AQUAMARINE,
+                    'button--accent-magenta':this.$store.state.accentColour===AccentColour.MAGENTA
+                }"
                 @click=resetDefaultHandler
             >
                 Reset topics to default

@@ -1,11 +1,13 @@
 <script lang="ts">
     import { defineComponent } from 'vue'
-    // import Logo from "../components/Logo.vue"
+    import AccentColour from '../models/AccentColour'
 
     export default defineComponent ({
         name: "Intro",
-        components: {
-            // Logo
+        data() {
+            return {
+                AccentColour
+            }
         }
     })
 </script>
@@ -28,7 +30,15 @@
             </div>
             <div class="intro__button-wrapper">
                 <router-link to="/talk">
-                    <button>Let's get you started</button>
+                    <button
+                        :class="{
+                            'button--dark':this.$store.state.isDarkMode,
+                            'button--accent-aquamarine':this.$store.state.accentColour===AccentColour.AQUAMARINE,
+                            'button--accent-magenta':this.$store.state.accentColour===AccentColour.MAGENTA
+                        }"
+                    >
+                        Let's get you started
+                    </button>
                 </router-link>
             </div>
         </div>
