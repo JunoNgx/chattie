@@ -37,6 +37,13 @@
                 </div>
                 <div class="settings__items__item__options">
                     <input
+                        class="settings__items__item__options--checkbox"
+                        :class="{
+                            'settings__items__item__options--checkbox--accent-aquamarine'
+                                :this.$store.state.accentColour===AccentColour.AQUAMARINE,
+                            'settings__items__item__options--checkbox--accent-magenta'
+                                :this.$store.state.accentColour===AccentColour.MAGENTA
+                        }"
                         type="checkbox"
                         id="dark-mode-checkbox"
                         v-model=localDarkModeValue
@@ -95,7 +102,13 @@
             display: grid
             grid-column-gap: 2rem
             grid-template-columns: 1fr 1fr
-    
+
+            &__options--checkbox--accent
+                &-aquamarine
+                    accent-color: v.$acc-aquamarine
+                &-magenta
+                    accent-color: v.$acc-magenta
+
     &__buttons
 
         &__button
