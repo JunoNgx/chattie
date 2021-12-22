@@ -5,62 +5,99 @@
         "isEnabledByDefault": true,
         "prompts": [
             "Favourite colours",
+            "What do you like most about yourself?",
+            "What do you dislike most about yourself?",
             "What time do you sleep?",
             "What do you often forget?",
             "Your guilty pleasure",
             "Something you are OCD about",
             "An useless talent you have",
             "Your last lie",
-            "Your favourite belonging",
+            "Your favourite belongings",
             "Something you'd save if your house is on fire",
-            "Favourite food",
-            "Favourite restaurant",
             "Somewhere you'd like to travel to",
-            "Peer pressure"
+            "The worst advice you have given/received",
+            "The best advice you have given/received",
+            "If you could choose, which animal would you be?",
+            "Your favourite celebrity scandal",
+            "Social media stalking",
+            "If you could do something illegal, what would you do?",
+            "A weird combination of food you like",
+            "How would you spend $50 from lottery winning?",
+            "How would you spend $1m from lottery winning?",
+            "Your favourite word in English",
+            "How do you make friends",
+            "What would you program your robot to do for you",
+            "Where do you see yourself 10 years from now?",
+            "What subject would you create for schools?",
+            "Items on your bucket list",
+            "Someone who has influenced you",
+            "What are you sentimental about?",
+            "Your motivations in life",
+            "A significant life event",
+            "What makes you laugh?",
+            "Your fantasies as a kid",
+            "Your nicknames",
+            "What talents you wish you had?",
+            "Your usual days",
+            "Your weekends",
+            "Your favourite place to live in the world",
+            "Your daily rituals",
+            "Your strangest dreams",
+            "What bores you?",
+            "A fictional character you would like to be",
+            "Your role model",
+            "Your favourite month of the year"
         ]
     },
     {
         "id": 1,
-        "name": "romance",
+        "name": "food",
         "isEnabledByDefault": true,
         "prompts": [
-            "Pet peeves in dates",
-            "Paying bills on the first date",
-            "Cheating",
-            "Open relationships",
-            "Rejection",
-            "Sexting",
-            "Using toys in bed",
-            "Random thing that turns you on",
-            "Your last date",
-            "Something you'd like to try with a romantic partner",
-            "Something you'd like to try in bad",
-            "French kiss",
-            "Sizes (as in, in bed)",
-            "Relationship status",
-            "Breakup sex",
-            "Wet dreams",
-            "Not reciprocating oral sex",
-            "Threesome",
-            "Foreplay"
+            "Favourite food",
+            "Favourite restaurant",
+            "Asian food",
+            "American food",
+            "The signature dish from your hometown",
+            "Japanese food",
+            "Korean food",
+            "Pizza",
+            "Pineapple on pizzas",
+            "Sushi",
+            "Ramyun noodle",
+            "Laksa",
+            "Roti prata",
+            "Spaghetti",
+            "Banh mi",
+            "Pho",
+            "Instagramming food before eating",
+            "Chessecake",
+            "Tiramisu",
+            "Japanese ramen",
+            "Burgers",
+            "Fish and chips",
+            "Fast food",
+            "Fine dining",
+            "Wine",
+            "Beer",
+            "Tom yam soup",
+            "Pad Thai",
+            "Dumpling",
+            "Duck",
+            "Chicken",
+            "Beef",
+            "Meatball",
+            "Synthetic meat",
+            "Vegetarianism",
+            "Food made by your mom",
+            "Food made by your grandma",
+            "The food you can eat for the rest of your life",
+            "What does your ideal house look like?"
         ]
     },
     {
-        "id": 2,
-        "name": "astrology",
-        "isEnabledByDefault": true,
-        "prompts": [
-            "Your sign",
-            "Your rising sign",
-            "Dating based on signs",
-            "Choosing careers based on signs",
-            "Choosing friends based on signs",
-            "Incompatible signs",
-            "Something about your sign that isn't true about you"
-        ]
-    },
-    {
-        "id": 3,
+        "id": 10,
         "name": "films",
         "isEnabledByDefault": true,
         "prompts": [
@@ -73,7 +110,7 @@
             "Tom Cruise",
             "Superheroes movies",
             "Cinematography",
-            "Favourite soundtrack",
+            "Favourite movie soundtrack",
             "A remake of a film you'd like to happen",
             "A sequel of a film you'd like to see",
             "Your unpopular opinions about films",
@@ -83,11 +120,18 @@
             "Korean cinema",
             "A film that made you cry",
             "Nicholas Cage",
-            "Ryan Gosling"
+            "Ryan Gosling",
+            "Which actor should portray you in a biopic?",
+            "Bong Joon-ho",
+            "Park Chan-wook",
+            "Yorgos Lanthimos",
+            "Citizen Kane",
+            "Casablanca",
+            "Alfred Hitchcock"
         ]
     },
     {
-        "id": 4,
+        "id": 11,
         "name": "photography",
         "isEnabledByDefault": true,
         "prompts": [
@@ -101,11 +145,11 @@
         ]
     },
     {
-        "id": 5,
+        "id": 12,
         "name": "videogames",
         "isEnabledByDefault": true,
         "prompts": [
-            "Microtransactions",
+            "Microtransactions in videogames",
             "Call of Duty",
             "E-sport",
             "Smartphone games",
@@ -115,32 +159,16 @@
             "Mass Effect",
             "Indie games",
             "AA games",
+            "AAA games",
             "Cyberpunk 2077",
             "A game that is important to you",
-            "Virtual reality"
-        ]
-    },{
-        "id": 6,
-        "name": "parenting",
-        "isEnabledByDefault": true,
-        "prompts": [
-            "Kids crying in the middle of the night",
-            "Changing diaper",
-            "Kids getting sick",
-            "License to procreate",
-            "Single parent",
-            "Children as investment",
-            "Helicopter parent",
-            "Kids losing virginity",
-            "Kids failing exam",
-            "Unexpected parent responsibility",
-            "Parent burnout",
-            "Motherhood as womanhood",
-            "Giving kids sex ed"
+            "Virtual reality",
+            "An obscure game you really like",
+            "Favourite videogame soundtrack"
         ]
     },
     {
-        "id": 7,
+        "id": 13,
         "name": "music",
         "isEnabledByDefault": true,
         "prompts": [
@@ -163,7 +191,168 @@
             "Headphones or speakers?",
             "Mp3",
             "Music radio",
-            "Music based on mood"
+            "Music based on mood",
+            "Michael Jackson",
+            "Elvis Presley",
+            "The Beatles",
+            "Your favourite instruments",
+            "The songs you wrote",
+            "(Hypothetically, or not) what would you play in your music performance?"
+        ]
+    },
+    {
+        "id": 14,
+        "name": "books",
+        "isEnabledByDefault": true,
+        "prompts": [
+            "Twilight saga",
+            "Stephen Meyer",
+            "50 Shades of Grey",
+            "Harry Potter",
+            "JK Rowling",
+            "Haruki Murakami",
+            "Kazuo Ishiguro",
+            "Your favourite book",
+            "A book that made you cry",
+            "A book you hate",
+            "Cormac McCarthy",
+            "The book 1984",
+            "John le Carre"
+        ]
+    },
+    {
+        "id": 15,
+        "name": "tech",
+        "isEnabledByDefault": false,
+        "prompts": [
+            "iOS vs Android",
+            "Internet privacy",
+            "Smart glass",
+            "Smart watches",
+            "PC building"
+        ]
+    },
+    {
+        "id": 20,
+        "name": "parenting",
+        "isEnabledByDefault": true,
+        "prompts": [
+            "Kids crying in the middle of the night",
+            "Changing diaper",
+            "Kids getting sick",
+            "License to procreate",
+            "Single parent",
+            "Children as investment",
+            "Helicopter parents",
+            "Kids losing virginity",
+            "Kids failing exam",
+            "Unexpected parent responsibility",
+            "Parenting burnout",
+            "Motherhood as womanhood",
+            "Giving kids sex ed"
+        ]
+    },
+    {
+        "id": 21,
+        "name": "society",
+        "isEnabledByDefault": true,
+        "prompts": [
+            "Public healthcare",
+            "Social media influencers",
+            "The police",
+            "The state leader of your country",
+            "Something you'd like to change about society",
+            "Twitter",
+            "Tik Tok",
+            "Instagram",
+            "Facebook",
+            "Conformism",
+            "Being conscious of your public image",
+            "Feminism",
+            "Military conscription",
+            "Women in the military",
+            "Ethical marketing",
+            "Tattooes",
+            "Body piercings",
+            "Racism",
+            "Gender equality",
+            "Different job standards for different genders",
+            "News as entertainment",
+            "The media",
+            "Sex and nudity on TV",
+            "Nuclear threats"
+        ]
+    },
+    {
+        "id": 30,
+        "name": "romance",
+        "isEnabledByDefault": true,
+        "prompts": [
+            "Pet peeves in dates",
+            "Paying bills on the first date",
+            "Cheating",
+            "Best pickup line you have heard of",
+            "Open relationships",
+            "Rejection",
+            "Random thing that turns you on",
+            "The last date you went",
+            "Something you'd like to try with a romantic partner",
+            "French kissing",
+            "Facebook relationship status",
+            "Your worst/best date",
+            "Tinder",
+            "Ok Cupid",
+            "Blind dates",
+            "Speed dating",
+            "Crushes on cousins",
+            "Your relationship dealbreakers",
+            "Arguments as a fundamental part of a relationship",
+            "Divorces",
+            "$50,000 weddings",
+            "Something you dislike about dating",
+            "Worst thing to say on a first date"
+        ]
+    },
+    {
+        "id": 31,
+        "name": "sex",
+        "isEnabledByDefault": true,
+        "prompts": [
+            "Sexting",
+            "Using toys in bed",
+            "Something you'd like to try in bed",
+            "Sizes (as in, in bed)",
+            "Wet dreams",
+            "Breakup sex",
+            "Not reciprocating oral sex",
+            "Threesome",
+            "Foreplay"
+        ]
+    },
+    {
+        "id": 50,
+        "name": "astrology",
+        "isEnabledByDefault": true,
+        "prompts": [
+            "Your sign",
+            "Your rising sign",
+            "Dating based on signs",
+            "Choosing careers based on signs",
+            "Choosing friends based on signs",
+            "Incompatible signs",
+            "Something about your sign that isn't true for you"
+        ]
+    },
+    {
+        "id": 98,
+        "name": "random",
+        "isEnabledByDefault": true,
+        "prompts": [
+            "This app",
+            "The guy who made this app",
+            "Are conversation prompt generators useful?",
+            "The apocalypse",
+            "Your preparation for a zombie apocalypse"
         ]
     },
     {
@@ -173,7 +362,7 @@
         "prompts": [
             "What is your biggest fear?",
             "What are you insecure about?",
-            "What did your parents do wrong?",
+            "How did your parents fail you?",
             "Are you lonely?",
             "What are you most disappointed about?",
             "Are you settling for less?",
@@ -182,7 +371,12 @@
             "What have you given up on?",
             "What are your least favourite questions?",
             "What are your negative self-talks?",
-            "What is the most shameful thing you have done?"
+            "What is the most shameful thing you have done?",
+            "What are you peer-pressured to do",
+            "What hurts your feelings?",
+            "What was your lowest point in life?",
+            "Your happiest moment in life",
+            "Your biggest regrets"
         ]
     },
     {
@@ -203,7 +397,9 @@
             "Legality of suicide",
             "Piracy",
             "Recreational drug use",
-            "Queer romances"
+            "Queer romances",
+            "Police abolition",
+            "Incest"
         ]
     }
 ]
