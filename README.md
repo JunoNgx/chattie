@@ -4,9 +4,7 @@
 
 ## Deployment
 
-The project is deployed at [LetsChattie.com](LetsChattie.com).
-
-[Netlify badge]
+The project is deployed at [chattie-juno.vercel.app](https://chattie-juno.vercel.app/about).
 
 ## Features
 
@@ -22,7 +20,7 @@ This project is made with:
 * [VueRouter](https://router.vuejs.org/)
 * [VueX](https://vuex.vuejs.org/)
 * [TypeScript](https://www.typescriptlang.org/)
-* [SASS preprecessor](https://sass-lang.com/) ([indented syntax](https://sass-lang.com/documentation/syntax))
+* [SASS preprocessor](https://sass-lang.com/) ([indented syntax](https://sass-lang.com/documentation/syntax))
 
 ## Project Objectives
 
