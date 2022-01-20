@@ -62,7 +62,7 @@
 #app
     margin: 1rem auto
     max-width: 768px
-    min-height: 95vh
+    min-height: 90vh
     width: 100%
     height: 100%
     display: flex
