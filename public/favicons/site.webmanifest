@@ -27,6 +27,6 @@
     "orientation": "portrait-primary",
     "theme_color": "#ff0066",
     "background_color": "#222",
-    "start_url": "https://letschattie.com/talk",
+    "start_url": "https://chattie-juno.vercel.app/talk",
     "prefer_related_applications": false
 }
