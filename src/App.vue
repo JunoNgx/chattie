@@ -1,8 +1,8 @@
 <script lang="ts">
     import { defineComponent } from "vue"
-    import Header from "./components/Header.vue"
-    import Footer from "./components/Footer.vue"
-    import topicData from "./data/topics.json" 
+    import Header from "@/components/Header.vue"
+    import Footer from "@/components/Footer.vue"
+    import topicData from "@/data/topics.json" 
 
     export default defineComponent ({
         name: "App",
@@ -54,34 +54,34 @@
 
 <style lang="sass">
 
-@use "./styles/mixins" as m
-@use "./styles/vars" as v
-@use "./styles/universal"
-@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,700;1,300&display=swap')
+    @use "@/styles/mixins" as m
+    @use "@/styles/vars" as v
+    @use "@/styles/universal"
+    @import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,700;1,300&display=swap')
 
-#app
-    margin: 1rem auto
-    max-width: 768px
-    min-height: 90vh
-    width: 100%
-    height: 100%
-    display: flex
-    flex-direction: column
-    justify-content: space-between
-    overflow: hidden
+    #app
+        margin: 1rem auto
+        max-width: 768px
+        min-height: 90vh
+        width: 100%
+        height: 100%
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        overflow: hidden
 
-    +m.mobile
-        max-width: 100%
+        +m.mobile
+            max-width: 100%
 
-.v-enter-from
-    transform: translateX(-100%)
-    opacity: 0
+    .v-enter-from
+        transform: translateX(-100%)
+        opacity: 0
 
-.v-enter-active, .v-leave-active
-    +m.transition(transform, opacity)
+    .v-enter-active, .v-leave-active
+        +m.transition(transform, opacity)
 
-.v-leave-to
-    transform: translateX(100%)
-    opacity: 0
+    .v-leave-to
+        transform: translateX(100%)
+        opacity: 0
 
 </style>
