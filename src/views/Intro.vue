@@ -1,6 +1,6 @@
 <script lang="ts">
     import { defineComponent } from 'vue'
-    import AccentColour from '../models/AccentColour'
+    import AccentColour from '@/models/AccentColour'
 
     export default defineComponent ({
         name: "Intro",
@@ -47,35 +47,35 @@
 
 <style lang="sass">
 
-@use "../styles/mixins" as m
-@use "../styles/vars" as v
+    @use "@/styles/mixins" as m
+    @use "@/styles/vars" as v
 
-.intro
-    margin: auto
-    padding: 1rem
-    max-width: 70%
-    +m.mobile
-        max-width: 90%
+    .intro
+        margin: auto
+        padding: 1rem
+        max-width: 70%
+        +m.mobile
+            max-width: 90%
 
-    img
-        max-width: 100%
-        height: auto
-        border-radius: 100%
+        img
+            max-width: 100%
+            height: auto
+            border-radius: 100%
 
-    &__image-wrapper
-        margin: 1rem auto
-        width: 80%
+        &__image-wrapper
+            margin: 1rem auto
+            width: 80%
 
-        &__image
+            &__image
+                text-align: center
+
+        &__slogan
             text-align: center
 
-    &__slogan
-        text-align: center
-
-        &__branding
-            visibility: none
-            display: flex
-            align-items: center
-            justify-content: center
+            &__branding
+                visibility: none
+                display: flex
+                align-items: center
+                justify-content: center
 
 </style>

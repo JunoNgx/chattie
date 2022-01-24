@@ -1,6 +1,6 @@
 <script lang="ts">
     import { defineComponent } from 'vue'
-    import AccentColour from "../models/AccentColour"
+    import AccentColour from "@/models/AccentColour"
 
     export default defineComponent ({
         name: "SettingsDialog",
@@ -86,40 +86,40 @@
 
 <style lang="sass">
 
-@use "../styles/mixins" as m
-@use "../styles/vars" as v
+    @use "@/styles/mixins" as m
+    @use "@/styles/vars" as v
 
-.settings
-    margin: auto
-    padding: 1rem
-    width: 70%
-    height: 50%
-    font-size: 1.25rem
-    +m.mobile
-        width: 90%
+    .settings
+        margin: auto
+        padding: 1rem
+        width: 70%
+        height: 50%
+        font-size: 1.25rem
+        +m.mobile
+            width: 90%
 
-    &__items
-        margin-bottom: 10rem
+        &__items
+            margin-bottom: 10rem
 
-        &__item
-            margin: 0.5rem
-            display: grid
-            grid-column-gap: 2rem
-            grid-template-columns: 1fr 1fr
+            &__item
+                margin: 0.5rem
+                display: grid
+                grid-column-gap: 2rem
+                grid-template-columns: 1fr 1fr
 
-            &__options--checkbox--accent
-                &-aquamarine
-                    accent-color: v.$acc-aquamarine
-                &-magenta
-                    accent-color: v.$acc-magenta
+                &__options--checkbox--accent
+                    &-aquamarine
+                        accent-color: v.$acc-aquamarine
+                    &-magenta
+                        accent-color: v.$acc-magenta
 
-    &__buttons
+        &__buttons
 
-        &__button
-            float: right
-            +m.transition(color, background-color, width, height)
+            &__button
+                float: right
+                +m.transition(color, background-color, width, height)
 
-            &:hover
-                background-color: v.$acc-aquamarine
-                color: v.$bg-light
+                &:hover
+                    background-color: v.$acc-aquamarine
+                    color: v.$bg-light
 </style>

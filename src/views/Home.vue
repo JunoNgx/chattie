@@ -1,8 +1,8 @@
 <script lang="ts">
     import { defineComponent } from 'vue';
     
-    import TopicControl   from "../components/TopicControl.vue"
-    import PromptDisplay  from "../components/PromptDisplay.vue"
+    import TopicControl   from "@/components/TopicControl.vue"
+    import PromptDisplay  from "@/components/PromptDisplay.vue"
 
     export default defineComponent ({
         name: "Home",
@@ -22,7 +22,7 @@
 
 <style lang="sass">
 
-.home
-    width: 100%
+    .home
+        width: 100%
 
 </style>

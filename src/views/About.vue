@@ -1,6 +1,6 @@
 <script lang="ts">
     import { defineComponent } from 'vue'
-    import CA from '../components/CustomAnchor.vue'
+    import CA from '@/components/CustomAnchor.vue'
 
     export default defineComponent ({
         name: "About",
@@ -29,15 +29,15 @@
 
 <style lang="sass">
 
-@use "../styles/mixins" as m
-@use "../styles/vars" as v
+    @use "@/styles/mixins" as m
+    @use "@/styles/vars" as v
 
-.about
-    margin: auto
-    padding: 1rem
-    width: 70%
-    font-size: 1.25rem
-    +m.mobile
-        width: 90%
+    .about
+        margin: auto
+        padding: 1rem
+        width: 70%
+        font-size: 1.25rem
+        +m.mobile
+            width: 90%
 
 </style>
