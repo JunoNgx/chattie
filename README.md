@@ -36,7 +36,6 @@ This project is made with:
 * The addition of **VueX** invalidated major portions of my early codebase, such as passing down data from the parent to child components.
 * The addition of **Typescript** caused seemingly confusing changes to the way the API functioned. It took me a while to understand how `defineComponent()` worked.
 * There were caveats in using the SASS indented syntax (such as the inability to break a line with functions with long arguments).
-* Vue 3 invalidates a lot of tutorials due to the lack of the presence of `webpack.config.js`.
 
 ## Setup and compilation
 
