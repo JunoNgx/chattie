@@ -1,7 +1,7 @@
 <script lang="ts">
     import { defineComponent } from 'vue'
-    import AccentColour from '../models/AccentColour'
-    import Logo from "./Logo.vue"
+    import AccentColour from '@/models/AccentColour'
+    import Logo from "@/components/Logo.vue"
 
     export default defineComponent ({
         name: "Header",
@@ -61,57 +61,57 @@
 
 <style lang="sass">
 
-@use "../styles/mixins" as m
-@use "../styles/vars" as v
+    @use "@/styles/mixins" as m
+    @use "@/styles/vars" as v
 
-.header
+    .header
 
-    display: flex
-    align-items: center
-    justify-content: space-between
-
-    border-bottom: 1px solid v.$text-light
-    +m.transition(border-bottom)
-    &--dark
-        border-bottom: 1px solid v.$text-dark
-
-    &__branding
-        margin: 0.25rem
-    
-    &__navbar
         display: flex
         align-items: center
-        justify-content: flex-end
-        margin: 0.25rem
+        justify-content: space-between
 
-        &__item
-            margin: 0.5rem
-            text-decoration: none
-            font-size: 1.25rem
-            cursor: pointer
-            padding: 0.5rem
-            
-            color: v.$text-light
-            +m.transition(background-color)
+        border-bottom: 1px solid v.$text-light
+        +m.transition(border-bottom)
+        &--dark
+            border-bottom: 1px solid v.$text-dark
 
-            &--accent-aquamarine:hover
-                    background-color: v.$acc-aquamarine
-            &--accent-magenta:hover
-                    background-color: v.$acc-magenta
+        &__branding
+            margin: 0.25rem
+        
+        &__navbar
+            display: flex
+            align-items: center
+            justify-content: flex-end
+            margin: 0.25rem
 
-    +m.mobile
-        display: block
+            &__item
+                margin: 0.5rem
+                text-decoration: none
+                font-size: 1.25rem
+                cursor: pointer
+                padding: 0.5rem
+                
+                color: v.$text-light
+                +m.transition(background-color)
 
-a.header__navbar__item
-    color: v.$text-light
-    &:visited
+                &--accent-aquamarine:hover
+                        background-color: v.$acc-aquamarine
+                &--accent-magenta:hover
+                        background-color: v.$acc-magenta
+
+        +m.mobile
+            display: block
+
+    a.header__navbar__item
         color: v.$text-light
-    &--dark
-        color: v.$text-dark
         &:visited
+            color: v.$text-light
+        &--dark
             color: v.$text-dark
+            &:visited
+                color: v.$text-dark
 
-a.router-link-active
-    text-decoration: underline
+    a.router-link-active
+        text-decoration: underline
 
 </style>

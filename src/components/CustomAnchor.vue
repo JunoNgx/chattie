@@ -1,6 +1,6 @@
 <script lang="ts">
     import { defineComponent } from 'vue'
-    import AccentColour from '../models/AccentColour'
+    import AccentColour from '@/models/AccentColour'
 
     export default defineComponent ({
         name: "CustomAnchor",
@@ -33,17 +33,17 @@
 </template>
 
 <style lang="sass">
-@use "../styles/mixins" as m
-@use "../styles/vars" as v
+    @use "@/styles/mixins" as m
+    @use "@/styles/vars" as v
 
-.custom-anchor
-    +m.transition(color)
-    &--accent-aquamarine
-        color: v.$acc-aquamarine
-        &:visited
+    .custom-anchor
+        +m.transition(color)
+        &--accent-aquamarine
             color: v.$acc-aquamarine
-    &--accent-magenta
-        color: v.$acc-magenta
-        &:visited
+            &:visited
+                color: v.$acc-aquamarine
+        &--accent-magenta
             color: v.$acc-magenta
+            &:visited
+                color: v.$acc-magenta
 </style>

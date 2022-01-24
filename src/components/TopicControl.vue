@@ -1,6 +1,6 @@
 <script lang="ts">
     import { defineComponent } from 'vue'
-    import AccentColour from '../models/AccentColour'
+    import AccentColour from '@/models/AccentColour'
 
     export default defineComponent({
         name: "topic-control",
@@ -71,85 +71,85 @@
 
 <style lang="sass">
 
-@use "../styles/mixins" as m
-@use "../styles/vars" as v
+    @use "@/styles/mixins" as m
+    @use "@/styles/vars" as v
 
-.topic-settings
-    margin: 2rem auto
-    padding: 0.5rem
-    overflow: hidden
-    max-width: 60%
-    max-height: 2rem
-    +m.transition(max-height)
-    +m.mobile
-        max-width: 90%
+    .topic-settings
+        margin: 2rem auto
+        padding: 0.5rem
+        overflow: hidden
+        max-width: 60%
+        max-height: 2rem
+        +m.transition(max-height)
+        +m.mobile
+            max-width: 90%
 
-    border: 1px solid v.$text-light
-    &--dark
-        border: 1px solid v.$text-dark
-
-    &--is-expanded
-        // Might need to be changed with new topics added
-        max-height: 50vh
-
-    &__expand-button
-        cursor: pointer
-        text-align: center
-        height: 2rem
-        margin-bottom: 1rem
-
-        &__text
-            font-size: 1.5rem
-
-        &__icon
-            display: inline-block
-            width: 1rem
-            height: 1rem
-            right: 0%
-            transform: rotate(45deg)
-            transform-origin: 100% 100%
-            margin-left: 1rem
-
-            &--accent-aquamarine
-                border-right: 5px solid v.$acc-aquamarine
-                border-bottom: 5px solid v.$acc-aquamarine
-            &--accent-magenta
-                border-right: 5px solid v.$acc-magenta
-                border-bottom: 5px solid v.$acc-magenta
-
-            +m.transition(transform-origin, transform)
-            &--is-expanded
-                transform-origin: 65% 65%
-                transform: rotate(225deg)
-
-    &__topic-wrapper
-        display: flex
-        align-items: center
-        justify-content: center
-        flex-wrap: wrap
-        gap: 0.5rem 1rem
-        opacity: 0
-        @include m.transition(opacity)
+        border: 1px solid v.$text-light
+        &--dark
+            border: 1px solid v.$text-dark
 
         &--is-expanded
-            opacity: 1
+            // Might need to be changed with new topics added
+            max-height: 50vh
 
-        &__item
-            margin: 0
-            padding: 0.5rem
-            border-radius: 1rem
+        &__expand-button
             cursor: pointer
-            user-select: none
-            +m.transition(background-color)
+            text-align: center
+            height: 2rem
+            margin-bottom: 1rem
 
-            &--accent-aquamarine
-                border: 2px solid v.$acc-aquamarine
-                &.topic-settings__topic-wrapper__item--is-enabled
-                    background-color: v.$acc-aquamarine
-                    
-            &--accent-magenta
-                border: 2px solid v.$acc-magenta
-                &.topic-settings__topic-wrapper__item--is-enabled
-                    background-color: v.$acc-magenta
+            &__text
+                font-size: 1.5rem
+
+            &__icon
+                display: inline-block
+                width: 1rem
+                height: 1rem
+                right: 0%
+                transform: rotate(45deg)
+                transform-origin: 100% 100%
+                margin-left: 1rem
+
+                &--accent-aquamarine
+                    border-right: 5px solid v.$acc-aquamarine
+                    border-bottom: 5px solid v.$acc-aquamarine
+                &--accent-magenta
+                    border-right: 5px solid v.$acc-magenta
+                    border-bottom: 5px solid v.$acc-magenta
+
+                +m.transition(transform-origin, transform)
+                &--is-expanded
+                    transform-origin: 65% 65%
+                    transform: rotate(225deg)
+
+        &__topic-wrapper
+            display: flex
+            align-items: center
+            justify-content: center
+            flex-wrap: wrap
+            gap: 0.5rem 1rem
+            opacity: 0
+            @include m.transition(opacity)
+
+            &--is-expanded
+                opacity: 1
+
+            &__item
+                margin: 0
+                padding: 0.5rem
+                border-radius: 1rem
+                cursor: pointer
+                user-select: none
+                +m.transition(background-color)
+
+                &--accent-aquamarine
+                    border: 2px solid v.$acc-aquamarine
+                    &.topic-settings__topic-wrapper__item--is-enabled
+                        background-color: v.$acc-aquamarine
+                        
+                &--accent-magenta
+                    border: 2px solid v.$acc-magenta
+                    &.topic-settings__topic-wrapper__item--is-enabled
+                        background-color: v.$acc-magenta
 
 </style>
