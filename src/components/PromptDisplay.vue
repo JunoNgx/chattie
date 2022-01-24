@@ -1,8 +1,8 @@
 <script lang="ts">
     import { defineComponent } from 'vue';
-    import type Topic from "../models/Topic"
-    import AccentColour from '../models/AccentColour'
-    import NoTopicError from "../components/NoTopicError.vue"
+    import type Topic from "@/models/Topic"
+    import AccentColour from '@/models/AccentColour'
+    import NoTopicError from "@/components/NoTopicError.vue"
 
     export default defineComponent({
         name: "prompt-display",
@@ -85,61 +85,61 @@
 
 <style lang="sass">
 
-@use "../styles/mixins" as m
-@use "../styles/vars" as v
+    @use "../styles/mixins" as m
+    @use "../styles/vars" as v
 
-.prompt-display
-    margin: auto
-    width: 50%
-    flex-grow: 1.5
-    text-align: center
+    .prompt-display
+        margin: auto
+        width: 50%
+        flex-grow: 1.5
+        text-align: center
 
-    &__text-wrapper
-        height: 40vh
-        vertical-align: center
-        display: flex
-        justify-content: center
-        align-items: center
+        &__text-wrapper
+            height: 40vh
+            vertical-align: center
+            display: flex
+            justify-content: center
+            align-items: center
 
-        &__text
-            font-size: 2rem
-            margin-bottom: 4rem
-    
-    &__button
-        cursor: pointer
-        width: fit-content
-        font-family: v.$font-stack
-        font-size: 1.5rem
-        padding: 1rem 2rem
-        +m.transition(color, background-color)
+            &__text
+                font-size: 2rem
+                margin-bottom: 4rem
+        
+        &__button
+            cursor: pointer
+            width: fit-content
+            font-family: v.$font-stack
+            font-size: 1.5rem
+            padding: 1rem 2rem
+            +m.transition(color, background-color)
 
-        &--accent-aquamarine
-            border: 2px solid v.$acc-aquamarine
-            color: v.$acc-aquamarine
-            &:hover
-                background-color: v.$acc-aquamarine
-        &--accent-magenta
-            border: 2px solid v.$acc-magenta
-            color: v.$acc-magenta
-            &:hover
-                background-color: v.$acc-magenta
+            &--accent-aquamarine
+                border: 2px solid v.$acc-aquamarine
+                color: v.$acc-aquamarine
+                &:hover
+                    background-color: v.$acc-aquamarine
+            &--accent-magenta
+                border: 2px solid v.$acc-magenta
+                color: v.$acc-magenta
+                &:hover
+                    background-color: v.$acc-magenta
 
-        &--dark
-            background-color: v.$bg-dark
-            &:hover
-                color: v.$bg-dark
+            &--dark
+                background-color: v.$bg-dark
+                &:hover
+                    color: v.$bg-dark
 
-    +m.mobile
-        width: 90%
+        +m.mobile
+            width: 90%
 
-.prompt-fade-enter-from
-    transform: translateY(-100%)
-    opacity: 0
+    .prompt-fade-enter-from
+        transform: translateY(-100%)
+        opacity: 0
 
-.prompt-fade-enter-active, .prompt-fade-leave-active
-    transition: transform v.$prompt-trans-time ease-out, opacity v.$prompt-trans-time ease-out
+    .prompt-fade-enter-active, .prompt-fade-leave-active
+        transition: transform v.$prompt-trans-time ease-out, opacity v.$prompt-trans-time ease-out
 
-.prompt-fade-leave-to
-    transform: translateY(100%)
-    opacity: 0
+    .prompt-fade-leave-to
+        transform: translateY(100%)
+        opacity: 0
 </style>
