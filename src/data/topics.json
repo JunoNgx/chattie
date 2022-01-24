@@ -47,7 +47,8 @@
             "What bores you?",
             "A fictional character you would like to be",
             "Your role model",
-            "Your favourite month of the year"
+            "Your favourite month of the year",
+            "Who do you admire?"
         ]
     },
     {
@@ -137,11 +138,12 @@
         "prompts": [
             "Smartphone photography",
             "Mirrorless camera",
-            "Medium format",
+            "Medium format photography",
             "Film photography",
             "Street photography",
             "An uncommon photography genre you know",
-            "Leica"
+            "Leica",
+            "Carl Zeiss"
         ]
     },
     {
@@ -343,7 +345,8 @@
         "name": "astrology",
         "isEnabledByDefault": true,
         "prompts": [
-            "Your sign",
+            "Your sun sign",
+            "Your moon sign",
             "Your rising sign",
             "Dating based on signs",
             "Choosing careers based on signs",
