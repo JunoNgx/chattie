@@ -1,26 +1,26 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import Intro from '../views/Intro.vue'
-import Home from '../views/Home.vue'
-import About from '../views/About.vue'
-import Settings from '../views/Settings.vue'
+import IntroView from '../views/IntroView.vue'
+import HomeView from '../views/HomeView.vue'
+import AboutView from '../views/AboutView.vue'
+import SettingsView from '../views/SettingsView.vue'
 
 const routes: Array<RouteRecordRaw> = [
     {
         path: '/',
         name: 'Intro',
-        component: Intro
+        component: IntroView
     }, {
         path: '/talk',
         name: 'Talk',
-        component: Home
+        component: HomeView
     }, {
         path: '/about',
         name: 'About',
-        component: About
+        component: AboutView
     }, {
         path: '/settings',
         name: 'Settings',
-        component: Settings
+        component: SettingsView
     }
 ]
 

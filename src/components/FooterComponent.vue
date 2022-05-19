@@ -3,7 +3,7 @@
     import CA from '@/components/CustomAnchor.vue'
 
     export default defineComponent ({
-        name: "Footer",
+        name: "FooterComponent",
         components: {
             CA
         }
