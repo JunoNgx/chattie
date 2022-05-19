@@ -72,8 +72,6 @@
 
         border-bottom: 1px solid v.$text-light
         +m.transition(border-bottom)
-        &--dark
-            border-bottom: 1px solid v.$text-dark
 
         &__branding
             margin: 0.25rem
@@ -90,28 +88,37 @@
                 font-size: 1.25rem
                 cursor: pointer
                 padding: 0.5rem
-                
                 color: v.$text-light
-                +m.transition(background-color)
+                border: 1px solid transparent
+                +m.transition(border)
 
-                &--accent-aquamarine:hover
-                        background-color: v.$acc-aquamarine
-                &--accent-magenta:hover
-                        background-color: v.$acc-magenta
+                &:hover
+                    border: 1px solid v.$text-light
 
         +m.mobile
             display: block
 
-    a.header__navbar__item
-        color: v.$text-light
-        &:visited
-            color: v.$text-light
         &--dark
-            color: v.$text-dark
-            &:visited
-                color: v.$text-dark
+            border-bottom: 1px solid v.$text-dark
 
-    a.router-link-active
-        text-decoration: underline
+            .header__navbar__item:hover
+                border: 1px solid v.$text-dark
+
+        a.header__navbar__item
+            color: v.$text-light
+            &:visited
+                color: v.$text-light
+            &--dark
+                color: v.$text-dark
+                &:visited
+                    color: v.$text-dark
+
+        a.router-link-active
+
+            &.header__navbar__item--accent-aquamarine
+                background-color: v.$acc-aquamarine
+
+            &.header__navbar__item--accent-magenta
+                background-color: v.$acc-magenta
 
 </style>

@@ -15,7 +15,7 @@
         class="footer"
         :class="{'footer--dark':this.$store.state.isDarkMode}"
     >
-        <p>made by <CA link="https://junongx.com/">Juno Nguyen</CA> with curiosity</p>
+        <p>made by <CA link="https://junongx.com/">Juno Nguyen</CA></p>
     </div>
 </template>
 

@@ -94,7 +94,10 @@
             "Food made by your mom",
             "Food made by your grandma",
             "The food you can eat for the rest of your life",
-            "What does your ideal house look like?"
+            "What does your ideal house look like?",
+            "Omakase",
+            "Instant noodles",
+            "Frying hot rice"
         ]
     },
     {
@@ -166,7 +169,10 @@
             "A game that is important to you",
             "Virtual reality",
             "An obscure game you really like",
-            "Favourite videogame soundtrack"
+            "Favourite videogame soundtrack",
+            "Elden Ring",
+            "Remakes",
+            "Quest pointers"
         ]
     },
     {
@@ -186,6 +192,8 @@
             "Your favourite music video",
             "Justin Bieber",
             "Britney Spears",
+            "Lady Gaga",
+            "Taylor Swift",
             "90s boybands",
             "Ripping CD",
             "Vinyls",
@@ -219,7 +227,9 @@
             "A book you hate",
             "Cormac McCarthy",
             "The book 1984",
-            "John le Carre"
+            "John le Carre",
+            "Lord of the Flies",
+            "The Little Prince"
         ]
     },
     {
@@ -240,7 +250,10 @@
             "3.5mm headphone jack",
             "Bluetooth earpieces",
             "App store gift cards",
-            "Dark themes"
+            "Dark themes",
+            "Huge phones",
+            "Small phones",
+            "Augmented reality"
         ]
     },
     {
@@ -260,7 +273,8 @@
             "Unexpected parent responsibility",
             "Parenting burnout",
             "Motherhood as womanhood",
-            "Giving kids sex ed"
+            "Giving kids sex ed",
+            "Post-partum depression"
         ]
     },
     {
@@ -291,7 +305,8 @@
             "News as entertainment",
             "The media",
             "Sex and nudity on TV",
-            "Nuclear threats"
+            "Nuclear threats",
+            "Government surveillance"
         ]
     },
     {
@@ -304,7 +319,7 @@
             "Cheating",
             "Best pickup line you have heard of",
             "Open relationships",
-            "Rejection",
+            "Handling rejection",
             "Random thing that turns you on",
             "The last date you went",
             "Something you'd like to try with a romantic partner",
@@ -313,6 +328,7 @@
             "Your worst/best date",
             "Tinder",
             "Ok Cupid",
+            "Bumble",
             "Blind dates",
             "Speed dating",
             "Crushes on cousins",
@@ -398,7 +414,7 @@
         "isEnabledByDefault": false,
         "prompts": [
             "Abortion",
-            "Enthanasia",
+            "Euthanasia",
             "Liberism",
             "Conservatism",
             "Transgenders",
