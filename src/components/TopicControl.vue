@@ -90,7 +90,7 @@
 
         &--is-expanded
             // Might need to be changed with new topics added
-            max-height: 50vh
+            max-height: 350px
 
         &__expand-button
             cursor: pointer
@@ -128,8 +128,9 @@
             justify-content: center
             flex-wrap: wrap
             gap: 0.5rem 1rem
+            padding: 0.5rem
             opacity: 0
-            @include m.transition(opacity)
+            +m.transition(opacity)
 
             &--is-expanded
                 opacity: 1
@@ -137,7 +138,7 @@
             &__item
                 margin: 0
                 padding: 0.5rem
-                border-radius: 1rem
+                border-radius: 2rem
                 cursor: pointer
                 user-select: none
                 +m.transition(background-color)
