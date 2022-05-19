@@ -104,7 +104,7 @@
             &__item
                 margin: 0.5rem
                 display: grid
-                grid-column-gap: 2rem
+                grid-column-gap: 1rem
                 grid-template-columns: 1fr 1fr
 
                 &__options--checkbox--accent
