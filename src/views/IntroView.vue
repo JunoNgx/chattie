@@ -3,7 +3,7 @@
     import AccentColour from '@/models/AccentColour'
 
     export default defineComponent ({
-        name: "Intro",
+        name: "IntroView",
         data() {
             return {
                 AccentColour

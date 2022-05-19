@@ -1,17 +1,17 @@
 <script lang="ts">
     import { defineComponent } from 'vue'
     import AccentColour from '@/models/AccentColour'
-    import Logo from "@/components/Logo.vue"
+    import LogoComponent from "@/components/LogoComponent.vue"
 
     export default defineComponent ({
-        name: "Header",
+        name: "HeaderComponent",
         data() {
             return {
                 AccentColour
             }
         },
         components: {
-            Logo
+            LogoComponent
         }
     })
 </script>
@@ -22,7 +22,7 @@
         :class="{'header--dark':this.$store.state.isDarkMode}"
     >
         <div class="header__branding">
-            <Logo/>
+            <LogoComponent/>
         </div>
         <div class="header__navbar">
             <router-link

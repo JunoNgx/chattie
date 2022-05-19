@@ -1,14 +1,14 @@
 <script lang="ts">
     import { defineComponent } from "vue"
-    import Header from "@/components/Header.vue"
-    import Footer from "@/components/Footer.vue"
+    import HeaderComponent from "@/components/HeaderComponent.vue"
+    import FooterComponent from "@/components/FooterComponent.vue"
     import topicData from "@/data/topics.json" 
 
     export default defineComponent ({
         name: "App",
         components: {
-            Header,
-            Footer
+            HeaderComponent,
+            FooterComponent
         },
         mounted: function() {
 
@@ -43,13 +43,13 @@
 
 
 <template>
-    <Header/>
+    <HeaderComponent/>
         <router-view v-slot="{ Component }">
             <transition mode="out-in" appear>
                 <component :is="Component" />
             </transition>
         </router-view>
-    <Footer/>
+    <FooterComponent/>
 </template>
 
 <style lang="sass">

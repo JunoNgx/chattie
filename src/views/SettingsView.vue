@@ -3,7 +3,7 @@
     import AccentColour from "@/models/AccentColour"
 
     export default defineComponent ({
-        name: "SettingsDialog",
+        name: "SettingsView",
         data() {
             return {
                 localDarkModeValue: this.$store.state.isDarkMode as boolean,

@@ -5,7 +5,7 @@
     import PromptDisplay  from "@/components/PromptDisplay.vue"
 
     export default defineComponent ({
-        name: "Home",
+        name: "HomeView",
         components: {
             TopicControl,
             PromptDisplay,
