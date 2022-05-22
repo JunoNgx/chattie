@@ -40,8 +40,8 @@ This project is made with:
 ## Setup and compilation
 
 ```
-npm install
-npm run serve
+yarn
+yarn serve
 ```
 
 ## License
