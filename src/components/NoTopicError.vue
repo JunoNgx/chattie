@@ -1,5 +1,5 @@
 <template>
-    <p class="error">No topic enable</p>
+    <p class="error">You have not selected any topic</p>
 </template>
 
 <style lang="sass">
